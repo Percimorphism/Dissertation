@@ -1,0 +1,73 @@
+\chapter{Introduction}
+\label{sec:intro}
+\chaptermark{Introduction}
+
+
+\section{Multidimensional Scaling}
+Inference based on dissimilarities is of fundamental importance in statistics, data mining and machine learning \cite{dissimilarityPatternRecog}, with applications ranging from neuroscience \cite{Vogelstein386} to psychology \cite{Carroll1970} to economics \cite{cmdsecon}. In each of these fields, rather than directly observing the feature values of the objects, often we observe only  the dissimilarities or ``distances" between pairs of objects (inter-point distances). A common approach to dimensionality reduction and subsequent inference problems involving dissimilarities is to embed the observed distances into some (usually Euclidean) space to recover a configuration that faithfully preserves observed distances, and then proceed to perform inference based on the resulting configuration \cite{Leeuw-Heiser, BGbook, Torgerson, Cox2008}. The popular classical multidimensional scaling 
+(CMDS) dimensionality reduction method provides an example of such an embedding scheme into Euclidean space, in which we have readily available tools to perform statistical inference. Furthermore, CMDS also forms the basis for several other more recent approaches to nonlinear dimension reduction and manifold learning \cite{Scholkopf, ChenBuja}, such as Isomap \cite{Isomap} and Random Forest manifold learning \cite{CriminisiandShotton} among others. 
+
+Although widely used, the behavior of CMDS under randomness remains largely unexplored. Several recent papers have highlighted this omission. \cite{DsquaredplusE} write ``Despite the popularity of multi-dimensional scaling, very little is known about to what extent the distances between the embedded points could faithfully reflect the true pairwise distances when observed with noise."; \cite{Fan} write ``[W]e are not aware of any statistical results measuring the performance of MDS under randomness, such as perturbation analysis when the objects are sampled from a probabilistic model." and \cite{Peterfreund&Gavish} write ``To the best of our knowledge, the literature does not offer a systematic treatment on the influence of ambient noise on MDS embedding quality." This paper addresses this acknowledged gap in the literature.
+
+\section{Random Forest for Manifold Learning}
+
+
+
+%This is a section.  Here's a reference to a different section:
+%\ref{sec:subsection}.
+
+%\subsection{Subsection}
+%\label{sec:subsection}
+
+%This is a subsection.
+
+% \begin{figure}[t]
+% \centering
+% \includegraphics[width=\textwidth]{figure}
+% \caption{Caption.}
+% \label{fig:figure}
+% \end{figure}
+% 
+% \begin{figure}[t]
+% \centering
+% \begin{tabular}{c c}
+% \includegraphics[height=2.5in]{figureA} &
+% \includegraphics[width=3in]{figureB}\\
+% (A) & (B)
+% \end{tabular}
+% \caption{Two figures.}
+% \label{fig:twofigures}
+% \end{figure}
+
+%\section[Optional table of contents heading]{Section with\\linebreaks in\\the name}
+
+%This is another section.
+
+%\subsection{Another subsection}
+
+%\subsubsection{Subsubsection}
+
+\begin{comment}
+\paragraph{Heading level below subsubsection}
+\label{sec:paragraph}
+
+And I quote: 
+%
+\begin{quote}
+La la la.
+\end{quote}
+%
+\noindent No ident after end of quote.  
+
+Another paragraph with a list:
+%
+\begin{itemize}
+%  
+\item Item 1
+%
+\item Item 2
+%
+\end{itemize}
+%
+\noindent Again, we don't indent here.
+\end{comment}
