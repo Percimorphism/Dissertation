@@ -1,0 +1,439 @@
+\chapter{Manifold Denoising with Unsupervised Randomer Forest}
+\label{sec:DURerF}
+\chaptermark{Denoising with URerF}
+
+
+\section{Introduction}
+The accuracy, scalability, and applicability of many machine learning algorithms is currently impeded by the high-dimensional and large-scale nature of most modern data sets. In particular, the dimensionality, or number of features, of many data sets is often  high, often due to noise in the data -- each data point is represented as a high-dimensional vector, but only a subset of them actually carries signals for subsequent inference.
+In other words, the data may lives near some unknown low-dimensional manifold embedded in some high-dimensional space. 
+To gain a thorough understanding of the data, it is therefore often necessary to reduce its dimensionality in a way that preserves its underlying structure. \textit{Manifold learning} is a set of tools designed to recover the underlying latent low-dimensional manifold structures of high-dimensional data.
+
+Existing manifold learning methods, however, face a number of challenges.  Linear approaches such as principal component analysis (PCA) \cite{pearson1901}, independent component analysis (ICA) \cite{hyvarinen2000independent}, canonical correlation analysis (CCA) \cite{hotelling1936relations}, multidimensional scaling (MDS)\cite{cox2000multidimensional}, CUR decompositions \cite{mahoney2009cur}, and Fisher's linear discriminant analysis (LDA), have been widely applied and useful in many domains, but make fairly strong assumptions of about a linear structure underlying a data set. To mitigate these issues a number of methods that can be characterized as kernel PCA methods were devised \cite{scholkopf1997kernel}, including  Isomap \cite{tenenbaum2000global}, Laplacian eigenmaps \cite{belkin2002laplacian}, maximum variance unfolding \cite{weinberger2006unsupervised}. These approaches are quite fragile to algorithm parameters, and typically require $mathcal{O}(n^3)$ operations for $n$ samples, which is prohibitively computationally expensive for many datasets.  Methods based on exact nearest neighbors, such as t-Distributed Stochastic Neighbor Embedding (t-SNE) \cite{maaten2008visualizing}, and
+Uniform
+Manifold Approximation and Projection (UMAP) \cite{mcinnes2018umap} also suffer computationally for large $n$. Approximate nearest neighbor approaches can mitigate some of these computational issues.  For example, Fast Approximate Nearest-Neighbor Matching (FLANN) \cite{muja2014scalable} is a popular 
+algorithm for nearest-neighbor detection in high-dimensional data sets. But FLANN, like all the above mentioned manifold learning algorithms, always operates on the observed dimensionality of the data.  When the true manifold is low-dimensional, and the data are high-dimensional, the additional noise dimensions will be problematic for any of these algorithms.
+
+
+We there propose an approach that we dub \emph{Unsupervised Randomer Forest} (URerF).
+Unlike the previously described methods,
+URerF does not need to compute geodesic distances
+between pairs of points. Instead,
+URerF examines local structure by 
+recursively 
+ clustering data in a sparse linear subspace of the original data, building on the recently proposed randomer forest algorithm for supervised learning~\cite{tomita2015randomer}.
+This randomer forest approach allows URerF
+to separate meaningful structure in the
+data from the noise dimensions.
+% URerF is therefore a \textit{robust, efficient} approach to manifold learning.
+
+Another contribution of this manuscript is a novel method for evaluating manifold learning algorithms.  Most existing manuscripts on the topic either embed the data into some low-dimensional space, such as 2D or 3D, and then merely visualize the results.  This approach is obviously limited in a number of ways: (1) it is purely qualitative, (2) when the structure is higher dimensional it may be lost, and (3) it relies on an embedding, which introduces additional complications.  Other manuscripts compare the results on some subsequent inference task, such as classification.  Such an approach is only able to evaluate performance of the manifold learning algorithm composed with a particular subsequent inferential method, but not the manifold learning algorithm itself.  We therefore introduce Precision@K, Recall@K, and Precision-Recall curves as quantitative metrics to evaluate manifold learning.  The difference between our proposed metrics and standard metrics, is that we do not evalute nearest neighbors with respect to the high-dimensional observed data, but rather the true low-dimensional latent representations.  If a manifold learning does poorly on this metric, it has no hope to perform well on subsequent tasks. Indeed Precision@k provides a theoretical bound on subsequent classification accuracy \cite{Devroye1997-bd}. 
+
+
+\section{Related Work}
+Of the many previously proposed manifold learning algorithms, we describe a few in detail that have risen to prominence and widespread use, which we will later compare to URerF.
+% Many dimensionality reduction methods have been developed to discover latent manifold structures of large-scale data sets.  In cases where data does not lie on an intrinsically linear subspace of the original high-dimensional space, these methods often fail to produce low-dimensional representations that preserve interpoint distances on the (nonlinear) manifold that data points lie on.
+% TODO: again, it is a model, data don't really live on a linear subspace of the original data.  and i don't think you are using the word "intrinsic" correctly here. 
+%
+% 
+% Although local and global structure is often well-preserved in this way, accurately representing
+% nearest-neighbor or geodesic distances can become
+% expensive in large-scale data sets.
+% In addition, these algorithms struggle to
+% overcome the challenges presented by an abundance of noisy dimensions in high-dimensional  data.
+
+% Kernel PCA \cite{scholkopf1997kernel} is a well-studied method that
+% uses a kernel function to map input data points into
+% a high-dimensional feature space, then
+% applies traditional PCA on this mapped
+% data in order to find a low-dimensional
+% representation that will preserve nonlinear
+% structure. A kernel matrix is used to
+% store inner products between data points 
+% instead of actually computing the mapping
+% of the data into higher dimensions.
+% On large data sets, however, 
+% storing the kernel matrix is expensive.
+% Although some progress has been made in 
+% recent years in
+% terms of improving the scalability of 
+% kernel PCA
+% \cite{zhang2016stochastic},
+% another disadvantage of kernel PCA is that
+% the appropriate kernel function to use
+% is often difficult to determine.
+% In addition, kernel PCA does not
+% fare well on highly noisy data sets with 
+% many irrelevant dimensions.
+
+One of the most widely used methods
+for nonlinear dimensionality reduction
+is still  Isomap  \cite{tenenbaum2000global}, which constructs a low-dimensional embedding
+of input data by first finding geodesic 
+distances between data points 
+in a k-nearest neighbor graph, then
+applies classical multidimensional scaling to
+the matrix of graph distances.
+In the case of many noisy dimensions, however,
+the Isomap algorithm can fail to construct
+an accurate nearest-neighbor graph,
+and requires the storage of all point-to-point
+graph distances, which incurs both a large space and time complexity.
+
+% Fast Approximate Nearest-Neighbor Matching (FLANN) \cite{muja2014scalable} is a popular 
+% algorithm for nearest-neighbor detection in high-dimensional data sets that takes a similar approach to our unsupervised randomer forest
+% technique. In particular, FLANN constructs a priority
+% search k-means tree by recursively
+% partitioning data into k clusters
+% using the k-means algorithm. This tree is then
+% traversed in order to find the 
+% nearest neighbors of a query point, choosing
+% the cluster with the closest centroid 
+% as the branch to descend. 
+% Unlike FLANN, we do not require the setting of
+% a \textit{branching factor} that determines the number
+% of clusters \textit{k} found by the \textit{k}-means
+% algorithm.
+% More importantly, FLANN relies on the value of 
+% \textit{all dimensions} of each data point
+% in order to cluster and partition the data at each
+% tree node. In the case of noisy data, 
+% a high number of noisy dimensions can dominate
+% the distance computations, and result
+% in an uninformative clustering at each level 
+% of the tree.
+
+UMAP is a new algorithm for dimensionality reduction
+that efficiently reduces high-dimensional data
+to a low dimension using a fuzzy simplicial set representation of the input data points \cite{mcinnes2018umap}.
+Like other nearest-neighbor based algorithms,
+UMAP first constructs an undirected, weighted k-nearest neighbor 
+graph from the input data, then
+embeds data points in a low-dimensional space
+using a force directed layout algorithm.
+The number of neighbors used to construct the
+graph in effect determines the local manifold structure that is to be preserved in the 
+low-dimensional layout.
+In the force-directed layout approach, 
+attractive forces between close vertices
+are iteratively balanced with repulsive forces between
+vertices that are far apart in the graph
+until convergence.
+% As we show in our section \ref{sec: exp},
+% UMAP is indeed an efficient algorithm but
+% is outperformed by our UReRF algorithm when
+% the input data contains a high degree of noise.
+UMAP builds upon the popular 
+t-Distributed Stochastic Neighbor Embedding (t-SNE) algorithm, which  
+attempts to preserve original interpoint distances in a 
+much lower dimensional space. The Kullback-Leibler 
+between the distribution of neighbor distances in the higher and lower dimensional spaces is used to determine the optimal mapping of points into the lower-dimensional space.
+t-SNE is primarily used for the visualization of high-dimensional data \cite{maaten2008visualizing},
+and cannot be used with non-metric distances. The UMAP algorithm was shown to produce similar embeddings to t-SNE in two or three dimensions, 
+but to scale better in terms of runtime across a wide range of embedding dimensions \cite{mcinnes2018umap}. 
+
+Finally, most closely related to our method are existing unsupervised random forest methods, the most popular of which is included in Adele Cutler's RandomForest R package \cite{Shi2006-ka}.  It proceeds by generating a synthetic copy of the data by randomly permuting each feature independently of the others, and then attempts to classify the real versus the synthetic dataset.  As will be seen below, this approach leads to missing surprisingly easy latent structures.
+
+
+\section{Unsupervised Randomer Forests}
+Our unsupervised random forest algorithm is based on the original Random Forest algorithm invented by Breiman \cite{breiman2001random} with a few key distinctions. 
+%
+A random forest is an ensemble of decision trees where each tree is created from bootstrapped samples of the training dataset in order to incorporate randomness. That is, each tree is built from a random subset of training data. More formally, a random forest is as a classifier consisting of a collection of tree structured classifiers $\{h(\textbf{x}, \theta_k)\}, k=1, 2..$ numtrees where $\theta_k$'s  are parameters and each tree casts a unit vote for the most popular class at input \textbf{x}. 
+ 
+Random Forests can be used for both supervised and unsupervised situations. In particular, for the unsupervised case, we can build a similarity matrix from the random forest. The similarity between two data points $X_1$ and $X_2$ is estimated as the fraction of the trees in which $X_1$ and $X_2$ appear in the same leaf node. 
+
+Our method additionally differs from the traditional, supervised case in the following ways. First,  we describe three different splitting criteria to rank potential splits, inspired by techniques studied in clustering research. We also show empirically that a novel FastBIC split results in better precision and recall accuracy because we incorporate model selection at each node. In past literature, these splitting criteria have not been explored in conjunction with decision trees and random forests. 
+
+Second, we use the term \textit{randomer} to label our technique, as our splitting methods are in addition based on random sparse linear combination of features to further improve randomness, as in Tomita et al.'s \textit{Randomer Forests} algorithm \cite{tomita2015randomer}. Randomness is therefore incorporated into the forest generation process in candidate dimension generation stage as well as the traditionally randomness-inducing bagging stage. 
+
+Third, we correctly implement a previously proposed method for generating proximity matrices from random forests. Specifically, in the currently most widely used implementation of Random Forest \cite{LiawRF}, the aggregated normalized proximity matrices of $N$ Random Forests with $M$ trees each is not stochastically equivalent to the aggregated normalized proximity matrices of $M$ Random Forests with $N$ trees each. We fix this bug in our implementation.
+
+
+\section{Algorithm}
+ 
+    % The unsupervised randomer forest algorithm is described in Algorithms \ref{alg:buildRF} - \ref{alg:BICOneD} from sections \ref{overall} to \ref{prox}. In \ref{overall}, we describe the overall forest building algorithm. In \ref{split}, we discuss three different splitting criteria to split the nodes at each level. Finally, in \ref{prox}, we discuss the building of the proximity matrix which can then be used for many different unsupervised learning applications. 
+
+\subsection{Overall algorithm} \label{overall}
+
+ 
+Given an input data set $X=\{x_1,\ldots, x_n\}$, $T$ decision trees are built, each from a random sample of size $m<n$. In each tree, URerF recursively splits a parent node into its two child nodes. Each internal node bisects the data based on its value in a particular dimension or on its values in a linear combination of a small number of dimensions. The best dimension, or combination of dimensions, is selected to split on based on the score that results from the splitting criteria described in Section \ref{split}. The proximity matrix is then populated by computing the fraction of the trees in which every pair of elements reside in the same leaf node. Algorithm \ref{alg:buildRF} describes the algorithm to build the forest and Algorithm \ref{alg:buildBICtree} describes the tree building process. Algorithms \ref{alg:twomeansOneD} - \ref{alg:BICOneD} describe the splitting procedures. All algorithms are relegate to Section \ref{sec:algorithms}. 
+
+ 
+\subsection{Splitting Criteria} \label{split}
+We have implemented and compared several splitting criteria in our evaluation of the unsupervised randomer forest algorithm.
+Namely, we compare splitting by 2-means
+clustering, two-means clustering with the Bayesian Information Criterion (BIC) test,
+and a soft clustering as defined by the 
+most likely Gaussian Mixture Model (GMM) of two Gaussians with the BIC test.
+The advantage of incorporating the BIC test
+into our splitting mechanism is its ability
+to select the the split which results in two distinct clusters. The BIC test outputs a score which is a measure of how well the datapoints are explained by a Gaussian mixture model with two Gaussians.
+
+
+\subsubsection{Two-Means Splitting} 
+We aim to find the split which minimizes the sum of the intra-cluster variance on the projected dimension. The elements are first sorted. Each element is scanned to be a potential cut point. The element to the left form one cluster with mean $\mu_1$ and the elements to the right of the cutpoint form another cluster with mean $\mu_2$. We seek to find the cutpoint which minimizes the one-dimensional 2-means objective $$\sum_{i=1}^{N_1} (X_i - \mu_1)^2 + \sum_{i=N_1}^{N_1+N_2} (X_i - \mu_2)^2 .$$ The algorithmic details are explained in Algorithm \ref{alg:twomeansOneD}.
+
+
+
+
+
+\subsubsection{Two-Means Splitting with FastBIC }
+The Bayesian Information Criterion (BIC) is used to select from among a finite collection of models. It is based on the log likelihood of the model given the points, with a regularization term penalizing complex models with many parameters. Concretely, the BIC score ($y$) can be defined as follows.
+\begin{equation}
+y = \ln(n)d - 2\ln(\hat{L})
+\end{equation}
+Here $\hat{L}$ is the maximum log likelihood function of a particular model $M$, 
+$n$ is the sample size (number of data points) and $d$ is the number of parameters estimated by the model.
+The maximum likelihood is defined as
+$\hat{L} =p(x|\hat{\theta}, M)$,  where $\hat{\theta}$ are the parameters that maximize the likelihood function, and $x$ is the observed data, for the model $M$. 
+ 
+
+We rank potential splits on the BIC score obtained assuming a model with a mixture of two Gaussians; the sorted elements along a given dimension to the left of the cut point belong to one Gaussian and the elements to the right belong to another Gaussian. Note here, that this is slightly different from a Gaussian mixture model because here we assume the that the point has been generated from each Gaussian $k$ with a fixed (known) probability $\pi_k$ which is the fraction of data points on either end of the split.
+
+For example, if the elements in one dimension are 
+$ \lbrace 1, 3, 4, 6 \rbrace,$ then the possible splits are $ \lbrace \lbrace 1 \rbrace, \lbrace 3, 4, 6 \rbrace  \rbrace$,
+$ \lbrace \lbrace 1, 3 \rbrace, \lbrace 4, 6 \rbrace \rbrace ,$  and $ \lbrace \lbrace 1, 3, 4 \rbrace , 
+\lbrace 6 \rbrace \rbrace$.
+In the case $ \lbrace \lbrace 1, 3 \rbrace, \lbrace 4, 6 \rbrace \rbrace $, we assume the model to comprise of two univariate Gaussians where $\lbrace 1,3 \rbrace $ are sampled from the first and $ \lbrace 4,6 \rbrace $ are sampled from the second.
+% TODO: parameters are used before they are defined.  also, are the below estimates of pi, or true pi?
+$\pi_1 = \pi_2 = 0.5$ in this case, as an equal number of points are sampled from both Gaussians. 
+We compute the estimates $\mu_1$, $\mu_2$ and $\sigma_1^2, \sigma_2^2$ for the means and variances of each
+of the two Gaussians in order to find
+the likelihood of the data under this split, and use
+it to compute the BIC score.
+The BIC score is computed for each possible
+split and we assign this dimension to the
+split which results in the lowest BIC score. 
+We proceed in the same manner for all dimensions and choose 
+to split using the dimension which results in the lowest overall BIC score. 
+The model can be defined as follows.
+$P(x_1,.., x_n | \mu, \sigma, \pi)$ is defined as follows, where $ \mu = \left( \mu_1, ..., \mu_K\right),  $ $\sigma = \left( \sigma_1, ..., \sigma_K\right),$ $ \pi = \left( \pi_1, ..., \pi_K \right)$:
+\begin{equation}\label{likprob}
+    P(x_{1:N}, z_{1:N, 1:K} |  \mu_{1:K},  \sigma, \pi) = \prod_{n=1}^{N} \prod_{k=1}^{K} \{\pi_k\mathcal{N}(x_n | \mu_k, \sigma_k^2)\}^{z_{n,k}}
+\end{equation}
+
+Here $N$ is the number of observations and $K$ is the number of Gaussian clusters. In this case $K=2$. We assume the points to the left of the split point form one cluster and the points to right form the second cluster.  $z_i \in \{0, 1\}^K$ is the indicator vector for data point $x_i$: $z_{(i \in (0, s], k = 0)} = 1$  and $z_{(i \in [s+1, N), k = 1)} = 1$ and 0 otherwise. 
+%If $x_n$ is in cluster $k$ and $0$ otherwise. 
+Now, letting the split point be $x_s$,  $x_1..x_s$ belong to cluster 1 and $x_{s+1}..x_n$ belong to cluster 2.
+The likelihood can be obtained by summing over the $z$s as follows.
+
+
+\begin{equation}\label{likprob2}
+    P(x|  \mu,  \sigma, \pi) = \sum_{z_{1:N, 1:K}}\prod_{n=1}^{N} \prod_{k=1}^{K} \{\pi_k\mathcal{N}(x_n | \mu_k, \sigma_k^2)\}^{z_{n,k}}
+\end{equation}
+
+
+
+Equation (\ref{likprob2}) can be simplified by noting that  $z_{(i \in (0, s], k = 0)} = 1$  and $z_{(i \in [s+1, N), k = 1)} = 1$ and 0 otherwise.
+\begin{equation}
+    P(x | \mu, \sigma, \pi) = \\ \prod_{n=1}^{s}\pi_1 \mathcal{N}(x_n | \mu_1, \sigma_1^2) \prod_{n=s+1}^{N}\pi_2 \mathcal{N}(x_n | \mu_2, \sigma_2^2)
+\end{equation}
+The maximum log likelihood function \\ $\hat{L} =\log P(x_1, x_2, ..., x_N | \hat{\mu}_{1:K}, \hat{\sigma}_{1:k}, \hat{\pi}_{1:k})$ is given by
+\begin{equation}\label{loglik1}
+   \hat{L} = \sum_{n=1}^{s} [\log \pi_1 + \log \mathcal{N}(x_{n} | \hat{\mu_1}, \hat{\sigma_{1}}^2)] \\+
+   \sum_{n=s+1}^{N} [\log \pi_2 + \log \mathcal{N}(x_{n} | \hat{\mu_2}, \hat{\sigma_{2}}^2)]
+\end{equation}
+
+Here, $\hat{\sigma}_{k}$ and $\hat{\mu}_{k}$ are the estimates of $\sigma_k$ and $\mu_k$ which maximize the log likelihood function. Let $N_1 = s$ and $N_2 = N-(s+1)$. Then, $\mu_k = \frac{1}{N_k}\sum_{n=1}^{N_k} x_n$,  $\hat{\sigma_k} = \frac{1}{N_k}\sum_{n=1}^{N_k}||x_{n} - \hat{\mu_k}||^2$, and $\hat{\pi}_k = \frac{N_k}{N}$. We further test for the single variance case ($\sigma_1 = \sigma_2$) and use the BIC formula to determine the best case. Substituting into equation ~\ref{loglik1} and simplifying, we get the following expression for the log likelihood.
+
+\begin{equation}\label{eq3}
+    \hat{L} =   - \frac{N_1}{2}\log 2\hat{\pi} \hat{\sigma}_1^2    - \frac{N_2}{2}\log 2\hat{\pi} \hat{\sigma}_2^2, 
+\end{equation}
+where we have dropped a number of terms that are not functions of the parameters. This FastBIC procedure is, to our knowledge, novel.
+ 
+
+\subsubsection{2-GMM Splitting with BIC}
+ 
+The GMM likelihood equations are the same as in the above case, except we now relax the binary constraints on the $z_i$.  Specifically, each point is considered to belong to weighted sum of the two Gaussians as opposed to a single Gaussian. We do not know the values of $z_i$ and we iteratively estimate them using the Expectation Maximization algorithm. Thus, whereas  FastBIC is guaranteed to obtain the global maximum likelihood estimator, BIC is liable to find only a local maximum. The algorithm to estimate $\mu_k$, $\pi_k$ and $z_k$ is provided in Algorithm \ref{alg:gmm}.
+
+
+\subsection{Proximity Matrix Construction}\label{prox}
+The proximity matrix $S$ for input data $D \in \mathbb{R}^{n \times d} $ is estimated using the unsupervised random forest by simply counting the fraction of times that a pair of points occurs in the same leaf node in the forest.
+Thus $S(i,j) = S_{ij} = \frac{L_{ij}}{T_{ij}} $,
+where $L(i,j)$ is the number of occurrences of points $i$ and $j$ in the
+same leaf node,
+and $T_{ij}$ is the number of trees in which both point $i$ and point $j$
+were included in the sample $R$ that was used to build the tree.
+% TODO: clarify, is this using the in-bag data or the out of bag data.  estimating the proximity should really be on the out of bag data i think.  if we aren't doing it that way, that is ok for now, but let's change it.
+
+% TODO: there are algorithm parameters, number of trees, convergence rule for each tree, parameters governing the feature generation matrix at each node.  these should be mentioned, and clarified what choices we made for this paper and why. probably in their own little section
+
+ 
+% TODO: make URerF red in every figure, so it maximally stands out.  this has the colors we often use: https://neurodata.io/ui-kit.html. note that it is not that important that we differentiate between other algorithms, more important that we demonstrate that ours is different, and explain when/where.
+
+\section{Algorithms} \label{sec:algorithms}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%algo1
+\begin{algorithm}
+\caption{Build a random forest using unlabeled data}\label{alg:buildRF}
+\begin{algorithmic}[1]
+\Procedure{BuildURF}{$X$, $T$, $d$, $c$}
+
+% Input: 
+%	X: a set of |X|=m points in n dimensions, 
+%	T: number of trees, 
+%	d: maximum depth of each tree, 
+%	c: minimum number of points in a leaf node
+%Output: Forest F: a set of T trees, with internal nodes storing means and the dimension to split on, and leaf nodes storing the set of points in one ``class?   
+
+\For{ $i=1, 2, \dots, T $}
+	\State $S \gets $ random sample (with replacement) from $X$ of size $m$ 
+	\State $t_i = $\textbf{BuildTree}$(S, d, c, 0)$
+	\State $F \gets F \cup \lbrace t_i \rbrace$
+	\State \textbf{return} $F$
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%algo 2
+\begin{algorithm}
+\caption{Build an unsupervised decision tree}
+\label{alg:buildBICtree}
+\begin{algorithmic}[1]
+%\caption{Pseudocode 1: Learning an unsupervised random(er) forest decision tree.}
+\Procedure{BuildTree}{$Y, d, c, k$, depth}%\Comment{The g.c.d. of a and b}
+%\Comment{\textbf{Input: }(1) $X$ : a bootstrapped sample of training data (2) $d$ : dimensionality of the projected space, 
+% (3) $\theta$ : set of split eligibility criteria}
+%\Comment{\textbf{Output: } a tree \textbf{t} of maximum depth d}
+%(3) $f_A$ : distribution of the random projection matrix,
+%\Output{Output: }
+%\State $c \gets 1$\Comment{$c$ is the current node index}
+%\State $M \gets 1$\Comment{$M$ is the number of nodes currently existing}
+\If{$|Y| \leq c  $ OR depth $== d$}
+	\State \textbf{return} LeafNode($Y$, depth)\Comment{Create a leaf node}
+\Else
+	\State $\mathcal{C} \leftarrow $ random sample of size $k$ from $\lbrace 1, \dots , d \rbrace $ 
+	\State min\_dists $ \leftarrow \infty$ 
+	\For{  $ i \in$ C}
+		\State $Y^{(i)} \leftarrow  Y \left[ , i  \right] $
+		\State (midpt, sum\_sq\_dists) = \textbf{OneD}($Y^{(i)}$) 
+		\If{ (sum\_sq\_dists $< $min\_dists)} %\Comment{store best splitting dimension and split point}
+			\State best\_dim = i
+			\State best\_split\_pt = midpt
+		\EndIf
+	\EndFor
+		
+	\State $Y_{\textnormal{left}} = \lbrace y \in Y |  y( \textnormal{best\_dim} )  <  \textnormal{best\_split\_pt} \rbrace$
+	\State $Y_{\textnormal{right}} = \lbrace y \in Y |   y(\textnormal{best\_dim})  \geq \textnormal{best\_split\_pt} \rbrace$
+
+	\State new\_Node = CreateInternalNode(best\_split\_pt, best\_dim, depth)
+	\State new\_Node.leftChild = BuildTree($Y_{\textnormal{left}}$,  d, c, k, depth+1)
+	\State new\_Node.rightChild = BuildTree($Y_{\textnormal{right}}$,  d, c, k, depth+1)
+	 
+	\State \textbf{return} new\_Node
+
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%algo3
+\begin{algorithm}
+\caption{Find the optimal split, in terms of the $k$-means objective, of one-dimensional data with $k$=2}\label{alg:twomeansOneD}
+\begin{algorithmic}[1]
+%\caption{Pseudocode 1: Learning an unsupervised random(er) forest decision tree.}
+\Procedure{univariateTwoMeans}{$Z = \lbrace z | z \in \mathcal{R}^1 \rbrace $}
+%\Comment{\textbf{Input: }(1) $X$ : a bootstrapped sample of training data (2) $d$ : dimensionality of the projected space, 
+% (3) $\theta$ : set of split eligibility criteria}
+%\Comment{\textbf{Output: } a tree \textbf{t} of maximum depth d}
+%(3) $f_A$ : distribution of the random projection matrix,
+%\Output{Output: }
+%\State $c \gets 1$\Comment{$c$ is the current node index}
+%\State $M \gets 1$\Comment{$M$ is the number of nodes currently existing}
+%\State \texttt{sort}(Z)
+\State  $\mu_1 \gets \min_{z \in Z} z $ 
+\State $\mathcal{C}_1 \gets \lbrace \mu_l \rbrace $
+\State $\mathcal{C}_2 \gets Z \setminus$ $\mathcal{C}_1$ 
+\State $\mu_2 \gets\frac{1}{|C_2|} \sum_{ z_i \in C_2 } z_i $  \Comment{mean of $C_2$}
+\State dists\_sq $\gets \sum_{j=1}^2 \sum_{z_i \in \textnormal{set}_j} (z_i - \mu_j)^2$ 
+\State min\_dist\_sq $\gets$ dists\_sq
+
+\While{ $\textnormal{set}_2 \neq \emptyset$ }
+	\State $z \gets \min (\textnormal{set}_2)$
+	\State $\mathcal{C}_1 \gets \mathcal{C}_1 \cup \lbrace z \rbrace$
+	\State $\mathcal{C}_2 \gets \mathcal{C}_2 \setminus \lbrace z \rbrace$ 
+	\State $\mu_1 \gets \frac{1}{|C_1|} \sum_{ z_i \in C_1 } z_i $  \Comment{mean of $C_1$}
+	\State $\mu_2 \gets\frac{1}{|C_2|} \sum_{ z_i \in C_2 } z_i $  \Comment{mean of $C_2$}	
+    %\State midpt $ \gets ( \mu_1 + \mu_2 ) / 2$
+	\State dists\_sq $\gets \sum_{j=1}^2 \sum_{z_i \in \mathcal{C}_j} (z_i - \mu_j)^2$ 	
+	\If{ dists\_sq $<$ min\_dist\_sq }
+		\State min\_dists\_sq $\gets$ dists\_sq
+		\State best\_midpt $\gets (\max(\mathcal{C}_1)+\min(\mathcal{C}_2))/2 $ \Comment{Midpoint between $C_1$ and $C_2$} % ( \mu_1 + \mu_2 ) / 2$
+	\EndIf	
+   \EndWhile
+\State \textbf{return} ( best\_midpt, min\_dist\_sq)
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+\caption{Find the optimal split, in terms of BIC score, of one-dimensional data with $k$=2 assumming the GMM Model}
+\label{alg:gmm}
+\begin{algorithmic}[1]
+%\caption{Pseudocode 1: Learning an unsupervised random(er) forest decision tree.}
+\Procedure{GMM}{Initialized estimates}
+
+\State $z_{n,k} = \frac{\mathcal{N}(x_n|\mu_k, \sigma^2)\pi_k}{\sum_{k'}\mathcal{N}(x_n|\mu_{k'}, \sigma^2)\pi_{k'}} $%\Comment{The g.c.d. of a and  
+\State   $\pi_k = \frac{1}{N} \sum_n z_{n,k}$
+\State $\mu_k = \sum_{n} \frac{z_{n,k}}{\sum_{n'} z_{n', k}}$
+\State $\sigma^2 = \frac{1}{N} \sum_{n} \sum_{k} z_{n,k} ||x_n - \mu_k||^2$
+ 
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%algo4
+\begin{algorithm}
+\caption{Find the optimal split, in terms of BIC score, of one-dimensional data with $k$=2}
+\label{alg:BICOneD}
+\begin{algorithmic}[1]
+%\caption{Pseudocode 1: Learning an unsupervised random(er) forest decision tree.}
+\Procedure{OneD}{$Z = \lbrace z | z \in \mathcal{R}^1 \rbrace $}%\Comment{The g.c.d. of a and b}
+%\Comment{\textbf{Input: }(1) $X$ : a bootstrapped sample of training data (2) $d$ : dimensionality of the projected space, 
+% (3) $\theta$ : set of split eligibility criteria}
+%\Comment{\textbf{Output: } a tree \textbf{t} of maximum depth d}
+%(3) $f_A$ : distribution of the random projection matrix,
+%\Output{Output: }
+%\State $c \gets 1$\Comment{$c$ is the current node index}
+%\State $M \gets 1$\Comment{$M$ is the number of nodes currently existing}
+\State  $\mu_1 \gets \min_{z \in Z} z $ 
+\State $\mathcal{C}_1 \gets \lbrace \mu_l \rbrace $
+\State $\mathcal{C}_2 \gets Z \setminus$ $\mathcal{C}_1$ 
+\State $\mu_2 \gets\frac{1}{|C_2|} \sum_{ z_i \in C_2 } z_i $  \Comment{mean of $C_2$}
+\State BIC\_curr $\gets \sum_{j=1}^2 \sum_{z_i \in \textnormal{set}_j} (z_i - \mu_j)^2$ 
+\State min\_BIC\_curr $\gets$ dists\_sq
+
+\While{ $\textnormal{set}_2 \neq \emptyset$ }
+	\State $z \gets \min (\textnormal{set}_2)$
+	\State $\mathcal{C}_1 \gets \mathcal{C}_1 \cup \lbrace z \rbrace$
+	\State $\mathcal{C}_2 \gets \mathcal{C}_2 \setminus \lbrace z \rbrace$ 
+	\State $\mu_1 \gets \frac{1}{|C_1|} \sum_{ z_i \in C_1 } z_i $  \Comment{mean of $C_1$}
+	\State $\mu_2 \gets\frac{1}{|C_2|} \sum_{ z_i \in C_2 } z_i $  \Comment{mean of $C_2$}	
+    %\State midpt $ \gets ( \mu_1 + \mu_2 ) / 2$
+    \State $\sigma_1^2 \gets \frac{1}{|C_1|}(z_1 - \mu_1)^2 $
+    \State $\sigma_2^2 \gets \frac{1}{|C_2|}(z_2 - \mu_2)^2 $
+	\State $\sigma_\textrm{comb}^2 \gets \frac{1}{|C_1| + |C_2|}\sum_{j=1}^2 \sum_{z_i \in \mathcal{C}_j} (z_i - \mu_j)^2$ 		
+	\State BIC\_diff\_var  $\gets -2(|C_1|\log \frac{|C_1|}{|C_1| + |C_2|} - \frac{|C_1|}{2}\log 2\pi \sigma_1^2 - |C_2|\log \frac{|C_1|}{|C_1| + |C_2|} + \frac{|C_2|}{2}\log 2\pi \sigma_2^2) + \ln(3)(|C_1|+|C_2|) $
+	
+	\State BIC\_same\_var $\gets -2(|C_1|\log \frac{|C_1|}{|C_1| + |C_2|}-\frac{|C_1|}{2}\log 2\pi \sigma_\textrm{comb}^2 - |C_2|\log \frac{|C_1|}{|C_1| + |C_2|} + \frac{|C_2|}{2}\log 2\pi \sigma_\textrm{comb}^2) + \ln(2)(|C_1|+|C_2|)$
+	
+	\State BIC\_curr $\gets \min$ ((BIC\_same\_var,  BIC\_diff\_var)
+	\If{ BIC\_curr $<$ min\_BIC}
+		\State min\_BIC $\gets$ BIC\_curr
+		\State best\_midpt $\gets (\max(\mathcal{C}_1)+\min(\mathcal{C}_2))/2 $ \Comment{Midpoint between $C_1$ and $C_2$} % ( \mu_1 + \mu_2 ) / 2$
+	\EndIf	
+   \EndWhile
+\State \textbf{return} ( best\_midpt, min\_BIC)
+
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+

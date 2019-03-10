@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{51}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -33,10 +33,22 @@ M.~Bakonyi and C.~Johnson.
 \newblock \doi{10.1137/S0895479893249757}.
 \newblock URL \url{https://doi.org/10.1137/S0895479893249757}.
 
+\bibitem[Belkin and Niyogi(2002)]{belkin2002laplacian}
+Mikhail Belkin and Partha Niyogi.
+\newblock Laplacian eigenmaps and spectral techniques for embedding and
+  clustering.
+\newblock In \emph{Advances in neural information processing systems}, pages
+  585--591, 2002.
+
 \bibitem[Borg and Groenen(2005)]{BGbook}
 I.~Borg and P.~J.~F. Groenen.
 \newblock \emph{Modern Multidimensional Scaling: Theory and Applications}.
 \newblock Springer, New York, 2005.
+
+\bibitem[Breiman(2001)]{breiman2001random}
+Leo Breiman.
+\newblock Random forests.
+\newblock \emph{Machine learning}, 45\penalty0 (1):\penalty0 5--32, 2001.
 
 \bibitem[Carroll and Chang(1970)]{Carroll1970}
 J.~D. Carroll and J.-J. Chang.
@@ -71,6 +83,11 @@ M.~A.~A. Cox and T.~F. Cox.
 \newblock \doi{10.1007/978-3-540-33037-0_14}.
 \newblock URL \url{https://doi.org/10.1007/978-3-540-33037-0_14}.
 
+\bibitem[Cox and Cox(2000)]{cox2000multidimensional}
+Trevor~F Cox and Michael~AA Cox.
+\newblock \emph{Multidimensional scaling}.
+\newblock Chapman and hall/CRC, 2000.
+
 \bibitem[Criminisi and Shotton(2013)]{CriminisiandShotton}
 A.~Criminisi and J.~Shotton.
 \newblock Manifold forests.
@@ -90,6 +107,12 @@ J.~de~Leeuw and W.~Heiser.
   Statistics II}, pages 285--316. North Holland Publishing Company, Amsterdam,
   The Netherlands, 1982.
 
+\bibitem[Devroye et~al.(1997)Devroye, Gy{\"o}rfi, and Lugosi]{Devroye1997-bd}
+Luc Devroye, Laszlo Gy{\"o}rfi, and Gabor Lugosi.
+\newblock \emph{A Probabilistic Theory of Pattern Recognition (Stochastic
+  Modelling and Applied Probability)}.
+\newblock Springer, corrected edition edition, February 1997.
+
 \bibitem[Fan et~al.(2018)Fan, Sun, Zhou, and Zhu]{Fan}
 J.~Fan, Q.~Sun, W.~X. Zhou, and Z.~Zhu.
 \newblock {Principal component analysis for big data}, January 2018.
@@ -103,6 +126,16 @@ J.~Glaun\`{e}s, A.~Qiu, M.~I. Miller, and L.~Younes.
   (3):\penalty0 317--336, 2008.
 \newblock ISSN 0920-5691.
 \newblock URL \url{http://dx.doi.org/10.1007/s11263-008-0141-9}.
+
+\bibitem[Hotelling(1936)]{hotelling1936relations}
+Harold Hotelling.
+\newblock Relations between two sets of variates.
+\newblock \emph{Biometrika}, 28\penalty0 (3/4):\penalty0 321--377, 1936.
+
+\bibitem[Hyv{\"a}rinen and Oja(2000)]{hyvarinen2000independent}
+Aapo Hyv{\"a}rinen and Erkki Oja.
+\newblock Independent component analysis: algorithms and applications.
+\newblock \emph{Neural networks}, 13\penalty0 (4-5):\penalty0 411--430, 2000.
 
 \bibitem[Jackson(1991)]{Jackson}
 J.~E. Jackson.
@@ -131,12 +164,41 @@ K.~Levin, A.~Athreya, M.~Tang, V.~Lyzinski, and C.~E. Priebe.
   product graphs}, 05 2017.
 \newblock arXiv:1705.09355.
 
+\bibitem[Liaw and Wiener(2002)]{LiawRF}
+Andy Liaw and Matthew Wiener.
+\newblock Classification and regression by randomforest.
+\newblock \emph{R News}, 2\penalty0 (3):\penalty0 18--22, 2002.
+
+\bibitem[Maaten and Hinton(2008)]{maaten2008visualizing}
+Laurens van~der Maaten and Geoffrey Hinton.
+\newblock Visualizing data using t-sne.
+\newblock \emph{Journal of machine learning research}, 9\penalty0
+  (Nov):\penalty0 2579--2605, 2008.
+
 \bibitem[Machado and Mata(2015)]{cmdsecon}
 J.~A.~T. Machado and M.~E. Mata.
 \newblock Analysis of world economic variables using multidimensional scaling.
 \newblock \emph{PLOS ONE}, 10\penalty0 (3):\penalty0 1--17, 03 2015.
 \newblock \doi{10.1371/journal.pone.0121277}.
 \newblock URL \url{https://doi.org/10.1371/journal.pone.0121277}.
+
+\bibitem[Mahoney and Drineas(2009)]{mahoney2009cur}
+Michael~W Mahoney and Petros Drineas.
+\newblock Cur matrix decompositions for improved data analysis.
+\newblock \emph{Proceedings of the National Academy of Sciences}, pages
+  pnas--0803205106, 2009.
+
+\bibitem[McInnes and Healy(2018)]{mcinnes2018umap}
+Leland McInnes and John Healy.
+\newblock Umap: Uniform manifold approximation and projection for dimension
+  reduction.
+\newblock \emph{arXiv preprint arXiv:1802.03426}, 2018.
+
+\bibitem[Muja and Lowe(2014)]{muja2014scalable}
+Marius Muja and David~G Lowe.
+\newblock Scalable nearest neighbor algorithms for high dimensional data.
+\newblock \emph{IEEE Transactions on Pattern Analysis \& Machine Intelligence},
+  36\penalty0 (11):\penalty0 2227--2240, 2014.
 
 \bibitem[Oh et~al.(2010)Oh, Montanari, and Karbasi]{Montanari}
 S.~Oh, A.~Montanari, and A.~Karbasi.
@@ -156,6 +218,13 @@ N.~Patwari, J.~N. Ash, S.~Kyperountas, A.~O. Hero, R.~L. Moses, and N.~S.
   54--69, July 2005.
 \newblock ISSN 1053-5888.
 \newblock \doi{10.1109/MSP.2005.1458287}.
+
+\bibitem[Pearson(1901)]{pearson1901}
+Karl Pearson.
+\newblock Liii. on lines and planes of closest fit to systems of points in
+  space.
+\newblock \emph{The London, Edinburgh, and Dublin Philosophical Magazine and
+  Journal of Science}, 2\penalty0 (11):\penalty0 559--572, 1901.
 
 \bibitem[Pekalska and Duin(2005)]{dissimilarityPatternRecog}
 E.~Pekalska and R.~P.~W. Duin.
@@ -178,6 +247,19 @@ B.~Sch\"{o}lkopf, A.~Smola, and K.-R. M\"{u}ller.
 \newblock \doi{10.1162/089976698300017467}.
 \newblock URL \url{https://doi.org/10.1162/089976698300017467}.
 
+\bibitem[Sch{\"o}lkopf et~al.(1997)Sch{\"o}lkopf, Smola, and
+  M{\"u}ller]{scholkopf1997kernel}
+Bernhard Sch{\"o}lkopf, Alexander Smola, and Klaus-Robert M{\"u}ller.
+\newblock Kernel principal component analysis.
+\newblock In \emph{International Conference on Artificial Neural Networks},
+  pages 583--588. Springer, 1997.
+
+\bibitem[Shi and Horvath(2006)]{Shi2006-ka}
+Tao Shi and Steve Horvath.
+\newblock Unsupervised learning with random forest predictors.
+\newblock \emph{J. Comput. Graph. Stat.}, 15\penalty0 (1):\penalty0 118--138,
+  March 2006.
+
 \bibitem[Singer(2008)]{Singer9507}
 A.~Singer.
 \newblock A remark on global positioning from local distances.
@@ -197,10 +279,10 @@ I.~Spence and D.~W. Domoney.
 \newblock URL \url{https://doi.org/10.1007/BF02291669}.
 
 \bibitem[Taghizadeh(2014)]{Taghizadeh}
-M.~J. Taghizadeh.
-\newblock Theoretical analysis of {E}uclidean distance matrix completion for ad
+Mohammad~J. Taghizadeh.
+\newblock Theoretical analysis of euclidean distance matrix completion for ad
   hoc microphone array calibration.
-\newblock 2014.
+\newblock Idiap-RR Idiap-RR-20-2014, Idiap, 11 2014.
 
 \bibitem[Tasissa and Lai(2018)]{Tasissa2018ExactRO}
 A.~Tasissa and R.~Lai.
@@ -208,13 +290,28 @@ A.~Tasissa and R.~Lai.
   low-rank matrix completion.
 \newblock \emph{CoRR}, abs/1804.04310, 2018.
 
-\bibitem[Tenenbaum et~al.(2000)Tenenbaum, Silva, and Langford]{Isomap}
+\bibitem[Tenenbaum et~al.(2000{\natexlab{a}})Tenenbaum, Silva, and
+  Langford]{Isomap}
 J.~B. Tenenbaum, V.~D. Silva, and J.~C. Langford.
 \newblock A global geometric framework for nonlinear dimensionality reduction.
-\newblock \emph{Science}, 290\penalty0 (5500):\penalty0 2319--2323, 2000.
+\newblock \emph{Science}, 290\penalty0 (5500):\penalty0 2319--2323,
+  2000{\natexlab{a}}.
 \newblock ISSN 0036-8075.
 \newblock \doi{10.1126/science.290.5500.2319}.
 \newblock URL \url{http://science.sciencemag.org/content/290/5500/2319}.
+
+\bibitem[Tenenbaum et~al.(2000{\natexlab{b}})Tenenbaum, De~Silva, and
+  Langford]{tenenbaum2000global}
+Joshua~B Tenenbaum, Vin De~Silva, and John~C Langford.
+\newblock A global geometric framework for nonlinear dimensionality reduction.
+\newblock \emph{science}, 290\penalty0 (5500):\penalty0 2319--2323,
+  2000{\natexlab{b}}.
+
+\bibitem[Tomita et~al.(2015)Tomita, Maggioni, and
+  Vogelstein]{tomita2015randomer}
+Tyler~M Tomita, Mauro Maggioni, and Joshua~T Vogelstein.
+\newblock Randomer forests.
+\newblock \emph{arXiv preprint arXiv:1506.03410}, 2015.
 
 \bibitem[Torgerson(1952)]{Torgerson}
 W.~S. Torgerson.
@@ -222,12 +319,12 @@ W.~S. Torgerson.
 \newblock \emph{Psychometrika}, 17:\penalty0 401--419, 1952.
 
 \bibitem[Vershynin(2018)]{HDP}
-R.~Vershynin.
-\newblock \emph{High-Dimensional Probability An Introduction with Applications
+Roman Vershynin.
+\newblock \emph{High-Dimensional Probability: An Introduction with Applications
   in Data Science}.
-\newblock 2018.
-\newblock URL
-  \url{https://www.math.uci.edu/~rvershyn/papers/HDP-book/HDP-book.pdf}.
+\newblock Cambridge Series in Statistical and Probabilistic Mathematics.
+  Cambridge University Press, 2018.
+\newblock \doi{10.1017/9781108231596}.
 
 \bibitem[Vogelstein et~al.(2014)Vogelstein, Park, Ohyama, Kerr, Truman, Priebe,
   and Zlatic]{Vogelstein386}
@@ -239,6 +336,12 @@ J.~T. Vogelstein, Y.~Park, T.~Ohyama, R.~A. Kerr, J.~W. Truman, C.~E. Priebe,
 \newblock ISSN 0036-8075.
 \newblock \doi{10.1126/science.1250298}.
 \newblock URL \url{http://science.sciencemag.org/content/344/6182/386}.
+
+\bibitem[Weinberger and Saul(2006)]{weinberger2006unsupervised}
+Kilian~Q Weinberger and Lawrence~K Saul.
+\newblock Unsupervised learning of image manifolds by semidefinite programming.
+\newblock \emph{International journal of computer vision}, 70\penalty0
+  (1):\penalty0 77--90, 2006.
 
 \bibitem[Yu et~al.(2015)Yu, Wang, and Samworth]{vD-K}
 Y.~Yu, T.~Wang, and R.~J. Samworth.

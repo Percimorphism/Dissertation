@@ -181,14 +181,16 @@ language={English}
 	abstract = {}
 }
 
-@book{HDP,
-  author = {Vershynin, R.},
-  title = {High-Dimensional Probability An Introduction with Applications in Data Science},
-  year = 2018,
-  url = {https://www.math.uci.edu/~rvershyn/papers/HDP-book/HDP-book.pdf},
-  urldate = {2018-03-01}
-}
-
+@book{HDP, 
+	place={Cambridge}, 
+	series={Cambridge Series in Statistical and Probabilistic Mathematics}, 
+	title={High-Dimensional Probability: An Introduction with Applications in Data Science},    
+        DOI={10.1017/9781108231596}, 
+	publisher={Cambridge University Press}, 
+	author={Vershynin, Roman}, 
+	year={2018}, 
+	collection={Cambridge Series in Statistical and Probabilistic Mathematics}}
+	
 @misc{OMNI,
    author = {Levin, K. and Athreya, A. and Tang, M. and Lyzinski, V. and Priebe, C. E.},
    title = "{A central limit theorem for an omnibus embedding of random dot product graphs}",
@@ -344,12 +346,18 @@ doi={10.1109/ITWKSPS.2010.5503144},
 ISSN={}, 
 month={Jan},}
 
-@article{Taghizadeh,
-      title = {Theoretical Analysis of {E}uclidean Distance Matrix  Completion for Ad hoc Microphone Array Calibration},
-      author = {Taghizadeh, M. J.},
-      publisher = {Idiap},
-      year = {2014},
-      abstract = {We consider the problem of ad~hoc microphone array  calibration where the distance matrix consisted of all  microphones pairwise distances have entries missing  corresponding to distances greater than $d_{\text{max}}$.  Furthermore, the known entries are noisy modeled through  additive independent random variables with strictly  sub-Gaussian distribution, $\textsc{S}\textsc{ub}(c^2(d))$  with a bounded constant dependent on the distance $d$  between the microphone pairs. In this report, we exploit  matrix completion approach to recover the full distance  matrix. We derive the theoretical guarantees of microphone  calibration performance which demonstrates that the error  of calibrating a network of $N$ microphones using matrix  completion decreases as $\mathcal{O}(N^{-1/2})$.},
+@TECHREPORT{Taghizadeh,
+         author = {Taghizadeh, Mohammad J.},
+       keywords = {Ad hoc microphone array calibration, Euclidean distance matrix, Matrix completion, Microphone localization., Missing pairwise distances},
+       projects = {Idiap},
+          month = {11},
+          title = {Theoretical Analysis of Euclidean Distance Matrix Completion for Ad hoc Microphone Array Calibration},
+           type = {Idiap-RR},
+         number = {Idiap-RR-20-2014},
+           year = {2014},
+    institution = {Idiap},
+       abstract = {We consider the problem of ad~hoc microphone array calibration where the distance matrix consisted of all microphones pairwise distances have entries missing corresponding to distances greater than $d_{\text{max}}$. Furthermore, the known entries are noisy modeled through additive independent random variables with strictly sub-Gaussian distribution, $\textsc{S}\textsc{ub}(c^2(d))$ with a bounded constant dependent on the distance $d$ between the microphone pairs. In this report, we exploit matrix completion approach to recover the full distance matrix. We derive the theoretical guarantees of microphone calibration performance which demonstrates that the error of calibrating a network of $N$ microphones using matrix completion decreases as $\mathcal{O}(N^{-1/2})$.},
+            pdf = {http://publications.idiap.ch/downloads/reports/2014/Taghizadeh_Idiap-RR-20-2014.pdf}
 }
 
 @Article{RandomForestBreiman,
@@ -515,3 +523,538 @@ keywords={wireless sensor networks;statistical analysis;time-of-arrival estimati
 doi={10.1109/MSP.2005.1458287}, 
 ISSN={1053-5888}, 
 month={July},}
+
+@Inbook{book,
+	author="Choromanska, Anna and Jebara, Tony and Kim, Hyungtae
+				and Mohan, Mahesh and Monteleoni, Claire",
+	editor="Jain, Sanjay and Munos, R{\'e}mi and Stephan, Frank
+			and Zeugmann, Thomas",
+	title="{Fast Spectral Clustering via the Nystr{\"o}m Method}",
+	bookTitle="Algorithmic Learning Theory: 24th International Conference, ALT 			2013, Singapore, October 6-9, 2013. Proceedings",
+	year="2013",
+	publisher="Springer Berlin Heidelberg",
+	address="Berlin, Heidelberg",
+	pages="367--381"
+}
+
+
+@BOOK{Devroye1997-bd,
+  title     = "A Probabilistic Theory of Pattern Recognition (Stochastic
+               Modelling and Applied Probability)",
+  author    = "Devroye, Luc and Gy{\"o}rfi, Laszlo and Lugosi, Gabor",
+  publisher = "Springer",
+  edition   = "Corrected edition",
+  month     =  feb,
+  year      =  1997,
+  language  = "en"
+}
+
+
+@ARTICLE{Shi2006-ka,
+  title     = "Unsupervised Learning With Random Forest Predictors",
+  author    = "Shi, Tao and Horvath, Steve",
+  abstract  = "A random forest (RF) predictor is an ensemble of individual tree
+               predictors. As part of their construction, RF predictors
+               naturally lead to a dissimilarity measure between the
+               observations. One can also define an RF dissimilarity measure
+               between unlabeled data: the idea is to construct an RF predictor
+               that distinguishes the ?observed? data from suitably generated
+               synthetic data. The observed data are the original unlabeled
+               data and the synthetic data are drawn from a reference
+               distribution. Here we describe the properties of the RF
+               dissimilarity and make recommendations on how to use it in
+               practice.An RF dissimilarity can be attractive because it
+               handles mixed variable types well, is invariant to monotonic
+               transformations of the input variables, and is robust to
+               outlying observations. The RF dissimilarity easily deals with a
+               large number of variables due to its intrinsic variable
+               selection; for example, the Addcl 1 RF dissimilarity weighs the
+               contribution of each variable according to how dependent it is
+               on other variables.We find that the RF dissimilarity is useful
+               for detecting tumor sample clusters on the basis of tumor marker
+               expressions. In this application, biologically meaningful
+               clusters can often be described with simple thresholding rules.",
+  journal   = "J. Comput. Graph. Stat.",
+  publisher = "Taylor \& Francis",
+  volume    =  15,
+  number    =  1,
+  pages     = "118--138",
+  month     =  mar,
+  year      =  2006
+}
+
+
+@article{breiman2001random,
+  title={Random forests},
+  author={Breiman, Leo},
+  journal={Machine learning},
+  volume={45},
+  number={1},
+  pages={5--32},
+  year={2001},
+  publisher={Springer}
+}
+
+@article{pearson1901,
+  title={LIII. On lines and planes of closest fit to systems of points in space},
+  author={Pearson, Karl},
+  journal={The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science},
+  volume={2},
+  number={11},
+  pages={559--572},
+  year={1901},
+  publisher={Taylor \& Francis}
+}
+
+@article{maaten2008visualizing,
+  title={Visualizing data using t-SNE},
+  author={Maaten, Laurens van der and Hinton, Geoffrey},
+  journal={Journal of machine learning research},
+  volume={9},
+  number={Nov},
+  pages={2579--2605},
+  year={2008}
+}
+
+@article{hyvarinen2000independent,
+  title={Independent component analysis: algorithms and applications},
+  author={Hyv{\"a}rinen, Aapo and Oja, Erkki},
+  journal={Neural networks},
+  volume={13},
+  number={4-5},
+  pages={411--430},
+  year={2000},
+  publisher={Elsevier}
+}
+
+@article{mahoney2009cur,
+  title={CUR matrix decompositions for improved data analysis},
+  author={Mahoney, Michael W and Drineas, Petros},
+  journal={Proceedings of the National Academy of Sciences},
+  pages={pnas--0803205106},
+  year={2009},
+  publisher={National Acad Sciences}
+}
+
+@inproceedings{weinberger2006introduction,
+  title={An introduction to nonlinear dimensionality reduction by maximum variance unfolding},
+  author={Weinberger, Kilian Q and Saul, Lawrence K},
+  booktitle={AAAI},
+  volume={6},
+  pages={1683--1686},
+  year={2006}
+}
+
+@article{weinberger2006unsupervised,
+  title={Unsupervised learning of image manifolds by semidefinite programming},
+  author={Weinberger, Kilian Q and Saul, Lawrence K},
+  journal={International journal of computer vision},
+  volume={70},
+  number={1},
+  pages={77--90},
+  year={2006},
+  publisher={Springer}
+}
+
+@article{hotelling1936relations,
+  title={Relations between two sets of variates},
+  author={Hotelling, Harold},
+  journal={Biometrika},
+  volume={28},
+  number={3/4},
+  pages={321--377},
+  year={1936},
+  publisher={JSTOR}
+}
+
+@book{cox2000multidimensional,
+  title={Multidimensional scaling},
+  author={Cox, Trevor F and Cox, Michael AA},
+  year={2000},
+  publisher={Chapman and hall/CRC}
+}
+
+@inproceedings{scholkopf1997kernel,
+  title={Kernel principal component analysis},
+  author={Sch{\"o}lkopf, Bernhard and Smola, Alexander and M{\"u}ller, Klaus-Robert},
+  booktitle={International Conference on Artificial Neural Networks},
+  pages={583--588},
+  year={1997},
+  organization={Springer}
+}
+
+@article{browne2018forest,
+  title={Forest Packing: Fast, Parallel Decision Forests},
+  author={Browne, James and Tomita, Tyler and Mhembere, Disa and Burns, Randal and Vogelstein, Joshua},
+  journal={arXiv preprint arXiv:1806.07300},
+  year={2018}
+}
+
+@inproceedings{zhang2016stochastic,
+  title={Stochastic Optimization for Kernel PCA.},
+  author={Zhang, Lijun and Yang, Tianbao and Yi, Jinfeng and Jin, Rong and Zhou, Zhi-Hua},
+  booktitle={AAAI},
+  pages={2315--2322},
+  year={2016}
+}
+
+@article{article,
+	author = { Yali Amit  and  Donald Geman },
+	title = {Shape Quantization and Recognition with Randomized Trees},
+	journal = {Neural Computation},
+	volume = {9},
+	number = {7},
+	pages = {1545-1588},
+	year = {1997},
+	doi = {10.1162/neco.1997.9.7.1545},
+	URL = {http://dx.doi.org/10.1162/neco.1997.9.7.1545},
+	eprint = {http://dx.doi.org/10.1162/neco.1997.9.7.1545}
+}
+
+
+@book{book2,
+  title={Predicting structured data},
+  author={Bakir, G{\"o}khan and Hofmann, Thomas and Scholkopf, Bernhard},
+  year={2007},
+  publisher={MIT press}
+}
+
+@inproceedings{inproceedings,
+  title={Generative adversarial nets},
+  author={Goodfellow, Ian and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+  booktitle={Advances in neural information processing systems},
+  pages={2672--2680},
+  year={2014}
+}
+
+@INCOLLECTION{incollection,
+  title     = "Using Fast Weights to Attend to the Recent Past",
+  booktitle = "Advances in Neural Information Processing Systems 29",
+  author    = "Ba, Jimmy and Hinton, Geoffrey E and Mnih, Volodymyr and Leibo,
+               Joel Z and Ionescu, Catalin",
+  editor    = "Lee, D D and Sugiyama, M and Luxburg, U V and Guyon, I and
+               Garnett, R",
+  publisher = "Curran Associates, Inc.",
+  pages     = "4331--4339",
+  year      =  2016
+}
+
+
+@PhDThesis{thesis,
+   abstract            = {The success of diffusion MRI is deeply rooted in
+                         the fact that during their micrometric random
+                         displacements water molecules explore tissue
+                         microstructure. Hence by labeling magnetically
+                         spins of displaced water, diffusion MRI provides
+                         us with exquisite information about the sizes and
+                         orientations on the multiple compartments present
+                         inside an imaging voxel. Through the causal
+                         relation between on one hand the imaged
+                         restricted and oriented water mobility and on the
+                         other hand the axonal orientations in brain white
+                         matter, diffusion MRI has become a powerful
+                         method to infer fiber tract architecture and
+                         brain anatomic connectivity. This work is not
+                         only a journey that takes us from essential
+                         diffusion MRI physics to an investigation of the
+                         brain neuronal circuitry, but also a thesis
+                         aiming at demonstrating the power of large scale
+                         analysis of brain connectivity, where every
+                         technological component is essential. After a
+                         short introduction on molecular diffusion and
+                         diffusion NMR, we start by showing that diffusion
+                         contrast is positive. This key issue that was
+                         only postulated up to now, allows us to justify
+                         why diffusion can be computed accurately with the
+                         only signal modulus. Accordingly, various
+                         emerging MRI techniques that map non-Gaussian
+                         diffusion have found a sound justification. In
+                         particular it is precisely the result that allows
+                         us to map distribution of diffusion related spin
+                         displacements by Fourier transformation of the
+                         measured signal modulus, hence to do Diffusion
+                         Spectrum MRI. We show through multiples MR
+                         experiments how the shape of this distribution in
+                         a complicated multi-compartment biological system
+                         can be measured and how its characteristic local
+                         heterogeneity is a mirror of fiber architectures.
+                         We discuss in detail its interpretation and its
+                         relation to other diffusion MRI techniques.
+                         Tractography is the necessary link that from
+                         diffusion MRI provides us with nerve fiber
+                         trajectories and maps of brain axonal
+                         connectivity. In this thesis two algorithms are
+                         proposed, while the first is designed for
+                         diffusion tensor MRI, the second is shaped for
+                         high angular resolution diffusion MRI and
+                         specifically tested on Diffusion Spectrum MRI.
+                         After having considered the potentials and the
+                         limitations of these line generation algorithms,
+                         we investigate whether tractography can be
+                         formulated as a segmentation problem in a high
+                         dimensional non Euclidean space, i.e.
+                         position-orientation space. With the help of the
+                         developed tools we address some key
+                         neuro-scientific questions. Based on diffusion
+                         tensor MRI data of 32 healthy volunteers,
+                         language networks are investigated. It is shown
+                         that right-handed men are massively
+                         interconnected between the left-hemisphere speech
+                         areas whereas the homologous in the right
+                         hemisphere are sparse; furthermore
+                         interhemispheric connections between the speech
+                         areas and their contralatera1 homologues are
+                         relatively strong. Women and left-handed men have
+                         equally strong intrahemispheric connections in
+                         both hemispheres, but women have a higher density
+                         of interhemispheric connections. After this
+                         quantitative study, Diffusion Spectrum MRI data
+                         of a single subject is collected and tractography
+                         performed in order to analyze the global
+                         connectivity pattern of the human brain. For this
+                         purpose we propose to model this large scale
+                         architecture by an abstract graph. It is shown
+                         that the long-range axonal network exhibits a
+                         "small world" topology. This type of particular
+                         architecture is present in various large scale
+                         communication networks. They emerge usually from
+                         a growing process where optimal communication has
+                         to be developed under some resource constraints.
+                         Furthermore we show also that the architecture of
+                         axonal connectivity between cortical areas
+                         exhibits a hierarchical organization. These
+                         results, which confirm more indirect studies,
+                         provide essential material to discuss not only
+                         brain evolution and development but also
+                         information processing at the level of the brain.},
+   address             = {Lausanne},
+   affiliation         = {EPFL},
+   author              = {Hagmann, Patric},
+   award               = {Chorafas},
+   details             = {http://infoscience.epfl.ch/record/33696},
+   doctoral            = {EDIC},
+   documenturl         = {https://infoscience.epfl.ch/record/33696/files/EPFL_TH3230.pdf},
+   doi                 = {10.5075/epfl-thesis-3230},
+   extra-id            = {4909507},
+   institute           = {ITS},
+   language            = {eng},
+   oai-id              = {oai:infoscience.epfl.ch:33696},
+   oai-set             = {thesis-bn},
+   pagecount           = {141},
+   production-date     = 2005,
+   public-defence-date = 2005,
+   publisher           = {EPFL},
+   school              = {STI},
+   status              = {PUBLISHED},
+   submitter           = {108898},
+   thesis-id           = {3230},
+   thesis-note         = {Pierre Magistretti, Juan Ramon Mosig, Klaas Prüssmann, Van J. Wedeen},
+   title               = {From diffusion {MRI} to brain connectomics},
+   url                 = {http://vpaa.epfl.ch/page14976.html},
+   urn                 = {urn:nbn:ch:bel-epfl-thesis3230-9},
+   year                = 2005
+}
+
+@article{tenenbaum2000global,
+  title={A global geometric framework for nonlinear dimensionality reduction},
+  author={Tenenbaum, Joshua B and De Silva, Vin and Langford, John C},
+  journal={science},
+  volume={290},
+  number={5500},
+  pages={2319--2323},
+  year={2000},
+  publisher={American Association for the Advancement of Science}
+}
+
+@article{mcinnes2018umap,
+  title={Umap: Uniform manifold approximation and projection for dimension reduction},
+  author={McInnes, Leland and Healy, John},
+  journal={arXiv preprint arXiv:1802.03426},
+  year={2018}
+}
+
+@article{gollub2003stanford,
+  title={The Stanford Microarray Database: data access and quality assessment tools},
+  author={Gollub, Jeremy and Ball, Catherine A and Binkley, Gail and Demeter, Janos and Finkelstein, David B and Hebert, Joan M and Hernandez-Boussard, Tina and Jin, Heng and Kaloper, Miroslava and Matese, John C and others},
+  journal={Nucleic acids research},
+  volume={31},
+  number={1},
+  pages={94--96},
+  year={2003},
+  publisher={Oxford University Press}
+}
+
+@article{muja2014scalable,
+  title={Scalable nearest neighbor algorithms for high dimensional data},
+  author={Muja, Marius and Lowe, David G},
+  journal={IEEE Transactions on Pattern Analysis \& Machine Intelligence},
+  volume={36},
+  number={11},
+  pages={2227--2240},
+  year={2014},
+  publisher={IEEE}
+}
+
+@inproceedings{belkin2002laplacian,
+  title={Laplacian eigenmaps and spectral techniques for embedding and clustering},
+  author={Belkin, Mikhail and Niyogi, Partha},
+  booktitle={Advances in neural information processing systems},
+  pages={585--591},
+  year={2002}
+}
+
+@unpublished{unpublished,
+	Author = {M.~Tang and Y.~Park and C.~E.~Priebe},
+	Note = {Arxiv preprint at \url{http://arxiv.org/abs/1305.4893}},
+	Title = {Out-of-sample extension for latent position graphs},
+	Year = 2013}
+
+
+@conference{conference,
+	Author = {E.Aleskerov and B.Frelisleben and B.Rao},
+	Booktitle = {Proceedings of IEEE Computational Intelligence for Financial Engineering},
+	Date-Added = {2009-07-17 13:34:14 -0400},
+	Date-Modified = {2009-07-17 13:36:13 -0400},
+	Pages = {220-226},
+	Title = {Cardwatch: A neural network based database mining system for credit card fraud detection},
+	Year = {1997}}
+
+@article{tomita2015randomer,
+  title={Randomer forests},
+  author={Tomita, Tyler M and Maggioni, Mauro and Vogelstein, Joshua T},
+  journal={arXiv preprint arXiv:1506.03410},
+  year={2015}
+}
+
+@article{torgerson1952multidimensional,
+  title={Multidimensional scaling: I. Theory and method},
+  author={Torgerson, Warren S},
+  journal={Psychometrika},
+  volume={17},
+  number={4},
+  pages={401--419},
+  year={1952},
+  publisher={Springer}
+}
+
+@article{Alon:1999dy,
+author = {Alon, U. and Barkai, N. and Notterman, D.A. and Gish, K. and Ybarra, S. and Mack, D. and Levine, A.J.},
+title = {{Broad patterns of gene expression revealed by clustering analysis of tumor and normal colon tissues probed by oligonucleotide arrays}},
+journal = {Proceedings of the National Academy of Sciences},
+year = {1999},
+volume = {96},
+number = {12},
+pages = {6745--6750},
+month = jun
+}
+
+@article{Shipp:2002ka,
+author = {Shipp, Margaret A and Ross, Ken N and Tamayo, Pablo and Weng, Andrew P and Kutok, Jeffery L and Aguiar, Ricardo C T and Gaasenbeek, Michelle and Angelo, Michael and Reich, Michael and Pinkus, Geraldine S and Ray, Tane S and Koval, Margaret A and Last, Kim W and Norton, Andrew and Lister, T Andrew and Mesirov, Jill and Neuberg, Donna S and Lander, Eric S and Aster, Jon C and Golub, Todd R},
+title = {{Diffuse large B-cell lymphoma outcome prediction by gene-expression profiling and supervised machine learning.}},
+journal = {Nature Medicine},
+year = {2002},
+volume = {8},
+number = {1},
+pages = {68--74},
+month = jan
+}
+
+@article{Sorlie:2001kr,
+author = {S{\o}rlie, Therese and Perou, Charles M and Tibshirani, Robert and Aas, Turid and Geisler, Stephanie and Johnsen, Hilde and Hastie, Trevor and Eisen, Michael B and van de Rijn, Matt and Jeffrey, Stefanie S and Thorsen, Thor and Quist, Hanne and Matese, John C and Brown, Patrick O and Botstein, David and L{\o}nning, Per Eystein and B{\o}rresen-Dale, Anne-Lise},
+title = {{Gene expression patterns of breast carcinomas distinguish tumor subclasses with clinical implications}},
+journal = {Proceedings of the National Academy of Sciences},
+year = {2001},
+volume = {98},
+pages = {10869--10874},
+month = sep
+}
+
+@article{Gravier:2010bz,
+author = {{Gravier, Eleonore} and Pierron, Gaelle and Vincent-Salomon, Anne and gruel, Nadege and Raynal, Virginie and Savignoni, Alexia and De Rycke, Yann and Pierga, Jean-Yves and Lucchesi, Carlo and Reyal, Fabien and Fourquet, Alain and Roman-Roman, Sergio and Radvanyi, Francois and Sastre-Garau, Xavier and Asselain, Bernard and Delattre, Olivier},
+title = {{A prognostic DNA signature for T1T2 node-negative breast cancer patients.}},
+journal = {Genes, Chromosomes and Cancer},
+year = {2010},
+volume = {49},
+number = {12},
+pages = {1125--1125},
+month = sep
+}
+
+@article{West:2001ft,
+author = {West, M M and Blanchette, C C and Dressman, H H and Huang, E E and Ishida, S S and Spang, R R and Zuzan, H H and Olson, J A JA and Marks, J R JR and Nevins, J R JR},
+title = {{Predicting the clinical status of human breast cancer by using gene expression profiles.}},
+journal = {Proceedings of the National Academy of Sciences of the United States of America},
+year = {2001},
+volume = {98},
+number = {20},
+pages = {11462--11467},
+month = sep
+}
+
+@article{Pomeroy:2002hm,
+author = {Pomeroy, Scott L and Tamayo, Pablo and Gaasenbeek, Michelle and Sturla, Lisa M and Angelo, Michael and McLaughlin, Margaret E and Kim, John Y H and Goumnerova, Liliana C and Black, Peter M and Lau, Ching and Allen, Jeffrey C and Zagzag, David and Olson, James M and Curran, Tom and Wetmore, Cynthia and Biegel, Jaclyn A and Poggio, Tomaso and Mukherjee, Shayan and Rifkin, Ryan and Califano, Andrea and Stolovitzky, Gustavo and Louis, David N and Mesirov, Jill P and Lander, Eric S and Golub, Todd R},
+title = {{Prediction of central nervous system embryonal tumour outcome based on gene expression}},
+journal = {Nature},
+year = {2002},
+volume = {415},
+number = {6870},
+pages = {436--442},
+month = jan
+}
+
+@article{Yeoh:2002wg,
+author = {Yeoh, Eng-Juh and Ross, Mary E and Shurtleff, Sheila A and Williams, W Kent and Patel, Divyen and Mahfouz, Rami and Behm, Fred G and Raimondi, Susana C and Relling, Mary V and Patel, Anami and Cheng, Cheng and Campana, Dario and Wilkins, Dawn and Zhou, Xiaodong and Li, Jinyan and Liu, Huiqing and Pui, Ching-Hon and Evans, William E and Naeve, Clayton and Wong, Limsoon and Downing, James R},
+title = {{Classification, subtype discovery, and prediction of outcome in pediatric acute lymphoblastic leukemia by gene expression profiling.}},
+journal = {Cancer Cell},
+year = {2002},
+volume = {1},
+number = {2},
+pages = {133--143},
+month = mar
+}
+
+@article{Tian:2003ht,
+author = {Tian, Erming and Zhan, Fenghuang and Walker, Ronald and Rasmussen, Erik and Ma, Yupo and Barlogie, Bart and Shaughnessy, Jr., John D},
+title = {{The Role of the Wnt-Signaling Antagonist DKK1 in the Development of Osteolytic Lesions in Multiple Myeloma}},
+journal = {New England Journal of Medicine},
+year = {2003},
+volume = {349},
+number = {26},
+pages = {2483--2494},
+month = dec
+}
+
+@article{Khan:2001cz,
+author = {Khan, J and Wei, J S and Ringn{\'e}r, M and Saal, L H and Ladanyi, M and Westermann, F and Berthold, F and Schwab, M and Antonescu, C R and Peterson, C and Meltzer, P S},
+title = {{Classification and diagnostic prediction of cancers using gene expression profiling and artificial neural networks.}},
+journal = {Nature Medicine},
+year = {2001},
+volume = {7},
+number = {6},
+pages = {673--679},
+month = jun
+}
+
+@article{LiawRF,
+    title = {Classification and Regression by randomForest},
+    author = {Andy Liaw and Matthew Wiener},
+    journal = {R News},
+    year = {2002},
+    volume = {2},
+    number = {3},
+    pages = {18-22},
+ }
+ 
+ @article{rerfpackage,
+    title = {rerf: Randomer Forest},
+    author = {Tyler Tomita and James Browne},
+    journal = {R News},
+    year = {2018},
+ }
+ 
+ @book{karkkainen2002dynamic,
+  title={Dynamic local search algorithm for the clustering problem},
+  author={K{\"a}rkk{\"a}inen, Ismo and Fr{\"a}nti, Pasi},
+  year={2002},
+  publisher={University of Joensuu}
+}

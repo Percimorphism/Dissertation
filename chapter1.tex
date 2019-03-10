@@ -9,7 +9,30 @@ Inference based on dissimilarities is of fundamental importance in statistics, d
 
 Although widely used, the behavior of CMDS under randomness remains largely unexplored. Several recent papers have highlighted this omission. \cite{DsquaredplusE} write ``Despite the popularity of multi-dimensional scaling, very little is known about to what extent the distances between the embedded points could faithfully reflect the true pairwise distances when observed with noise."; \cite{Fan} write ``[W]e are not aware of any statistical results measuring the performance of MDS under randomness, such as perturbation analysis when the objects are sampled from a probabilistic model." and \cite{Peterfreund&Gavish} write ``To the best of our knowledge, the literature does not offer a systematic treatment on the influence of ambient noise on MDS embedding quality." This paper addresses this acknowledged gap in the literature.
 
-\section{Random Forest for Manifold Learning}
+\section{Randomer Forest for Manifold Learning}
+The accuracy, scalability, and applicability of many machine learning algorithms is currently impeded by the high-dimensional and large-scale nature of most modern data sets. In particular, the dimensionality, or number of features, of many data sets is often  high, often due to noise in the data -- each data point is represented as a high-dimensional vector, but only a subset of them actually carries signals for subsequent inference.
+In other words, the data may lives near some unknown low-dimensional manifold embedded in some high-dimensional space. 
+To gain a thorough understanding of the data, it is therefore often necessary to reduce its dimensionality in a way that preserves its underlying structure. \textit{Manifold learning} is a set of tools designed to recover the underlying latent low-dimensional manifold structures of high-dimensional data.
+
+Existing manifold learning methods, however, face a number of challenges.  Linear approaches such as principal component analysis (PCA) \cite{pearson1901}, independent component analysis (ICA) \cite{hyvarinen2000independent}, canonical correlation analysis (CCA) \cite{hotelling1936relations}, multidimensional scaling (MDS)\cite{cox2000multidimensional}, CUR decompositions \cite{mahoney2009cur}, and Fisher's linear discriminant analysis (LDA), have been widely applied and useful in many domains, but make fairly strong assumptions of about a linear structure underlying a data set. To mitigate these issues a number of methods that can be characterized as kernel PCA methods were devised \cite{scholkopf1997kernel}, including  Isomap \cite{tenenbaum2000global}, Laplacian eigenmaps \cite{belkin2002laplacian}, maximum variance unfolding \cite{weinberger2006unsupervised}. These approaches are quite fragile to algorithm parameters, and typically require $mathcal{O}(n^3)$ operations for $n$ samples, which is prohibitively computationally expensive for many datasets.  Methods based on exact nearest neighbors, such as t-Distributed Stochastic Neighbor Embedding (t-SNE) \cite{maaten2008visualizing}, and
+Uniform
+Manifold Approximation and Projection (UMAP) \cite{mcinnes2018umap} also suffer computationally for large $n$. Approximate nearest neighbor approaches can mitigate some of these computational issues.  For example, Fast Approximate Nearest-Neighbor Matching (FLANN) \cite{muja2014scalable} is a popular 
+algorithm for nearest-neighbor detection in high-dimensional data sets. But FLANN, like all the above mentioned manifold learning algorithms, always operates on the observed dimensionality of the data.  When the true manifold is low-dimensional, and the data are high-dimensional, the additional noise dimensions will be problematic for any of these algorithms.
+
+
+We there propose an approach that we dub \emph{Unsupervised Randomer Forest} (URerF).
+Unlike the previously described methods,
+URerF does not need to compute geodesic distances
+between pairs of points. Instead,
+URerF examines local structure by 
+recursively 
+ clustering data in a sparse linear subspace of the original data, building on the recently proposed randomer forest algorithm for supervised learning~\cite{tomita2015randomer}.
+This randomer forest approach allows URerF
+to separate meaningful structure in the
+data from the noise dimensions.
+% URerF is therefore a \textit{robust, efficient} approach to manifold learning.
+
+Another contribution of this manuscript is a novel method for evaluating manifold learning algorithms.  Most existing manuscripts on the topic either embed the data into some low-dimensional space, such as 2D or 3D, and then merely visualize the results.  This approach is obviously limited in a number of ways: (1) it is purely qualitative, (2) when the structure is higher dimensional it may be lost, and (3) it relies on an embedding, which introduces additional complications.  Other manuscripts compare the results on some subsequent inference task, such as classification.  Such an approach is only able to evaluate performance of the manifold learning algorithm composed with a particular subsequent inferential method, but not the manifold learning algorithm itself.  We therefore introduce Precision@K, Recall@K, and Precision-Recall curves as quantitative metrics to evaluate manifold learning.  The difference between our proposed metrics and standard metrics, is that we do not evalute nearest neighbors with respect to the high-dimensional observed data, but rather the true low-dimensional latent representations.  If a manifold learning does poorly on this metric, it has no hope to perform well on subsequent tasks. Indeed Precision@k provides a theoretical bound on subsequent classification accuracy \cite{Devroye1997-bd}.
 
 
 

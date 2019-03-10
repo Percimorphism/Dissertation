@@ -62,6 +62,7 @@
 \newtheorem{claim}[fact]{Claim}
 \newtheorem{exercise}[fact]{Exercise}
 \newtheorem{remark}[fact]{Remark}
+\newtheorem{Conjecture}[fact]{Conjecture}
 \newtheorem{observation}[fact]{Observation}
 
 \newenvironment{proof}{{\bf Proof:  }}{\hfill\rule{2mm}{2mm}}
@@ -71,7 +72,6 @@
 \usepackage{caption}
 %\usepackage{subcaption}
 \usepackage{algorithm}
-\usepackage{algorithmic}
 \usepackage{bm}
 \renewcommand{\hat}{\widehat}
 \renewcommand{\tilde}{\widetilde}
@@ -79,12 +79,17 @@
 \usetikzlibrary{arrows}
 
 \def\R{{\mathbb R}}
+\newcommand{\M}{{\mathcal{M}}}
+\newcommand{\G}{{\mathcal{G}}}
 \newcommand{\iid}{{\stackrel{i.i.d.}{\sim}}}
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
 
 \usepackage{color}
 \newcommand{\RT}[1]{{\color{red}RT: #1}}
+
+\usepackage{algpseudocode}
+%\usepackage{algcompatible}
 
 
 % currsize is not set in the long table environment, so we need to set it before we set it up.
@@ -97,7 +102,7 @@
 
 \begin{document}
 
-\title{Classical Multidimensional Scalings: Central Limit Theorems and Random Forests}
+\title{Manifold Learning under Noise: Classical Multidimensional Scaling and Random Forests}
 \author{Gongkai Li}
 \degreemonth{May}
 \degreeyear{2019} 
@@ -110,7 +115,7 @@
 \include{chapter0}
 \include{chapter1}
 \include{chapter2}
-%\include{chapter3}
+\include{chapter3}
 %\include{chapter4}
 %\include{chapter5}
 
@@ -124,7 +129,7 @@
 
 \def\newblock{\hskip .11em plus.33em minus.07em}
 \bibliographystyle{plainnat}
-\bibliography{Bib}
+\bibliography{Bib.bib}
 
 \include{CV}
 

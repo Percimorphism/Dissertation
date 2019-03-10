@@ -1,4 +1,4 @@
-\chapter{Classical Multidimensional Scaling with Perturbation}
+\chapter{Classical Multidimensional Scaling under Noise}
 \label{sec:dmcs}
 \chaptermark{CMDS with Perturbation}
 
@@ -143,16 +143,16 @@ viewed from an optimization point of view. See
 \section{Main Theorems}
 \label{main}
 
-Recall that a random variable $X$ is sub-Gaussian if $\mathbb{P}[ | X
-| > t] \leq 2 e^{ -\frac{t^2}{ {K}^2} }$ for some constant $K$ and for
-all $t \geq 0$.  Associated with a sub-Gaussian random variable is a
-Orlicz norm defined as $ \| X \|_{\psi_2} = \inf \{ t >0 : \mathbb{E}
-\exp(\frac{X^2 }{t^2}) \leq 2 \}$.  A random vector $X$ in $\R^n$ is
-called sub-Gaussian if the one-dimensional marginals $\big \langle X,
+Recall that a random variable $X$ is sub-Gaussian if 
+$$\mathbb{P}[ | X | > t] \leq 2 e^{ -\frac{t^2}{ {K}^2} }$$ 
+for some constant $K$ and for
+all $t \geq 0$.  Associated with a sub-Gaussian random variable $X$ is a
+Orlicz norm defined as 
+$$ \| X \|_{\psi_2} = \inf \{ t >0 : \mathbb{E}\exp(\frac{X^2 }{t^2}) \leq 2 \}.$$  
+A random vector $X$ in $\R^n$ is called sub-Gaussian if the one-dimensional marginals $\big \langle X,
 x \big \rangle$ are sub-Gaussian random variables for all $x \in
 \R^n$, and the corresponding sub-Gaussian norm of $X$ is defined as
-$\|X\|_{\psi_2} = \sup\limits_{x \in S^{n-1}} \| \big \langle X, x
-\big \rangle \|_{\psi_2}$.
+$$\|X\|_{\psi_2} = \sup\limits_{x \in S^{n-1}} \| \big \langle X, x \big \rangle \|_{\psi_2}.$$
 
 
 We now present central limit theorems for
@@ -418,8 +418,38 @@ A practically relevant and conceptually illustrative example comes from relaxing
 
 CMDS is just one of a wide variety of multidimensional scaling techniques. Minimizing the raw stress criterion is another commonly used MDS technique \citep{Leeuw-Heiser}, i.e., given a $n \times n$ observed dissimilarity matrix $\Delta$ and an embedding dimension $d$, one seeks to minimize the objective function $$\sigma_r = \sigma_r(X) = \sum\limits_{(i,j)} (\delta_{ij} - \|X_i - X_j\|)^2.$$ The minimization of $\sigma_r(X)$ is with respect to all configurations $X \in \mathbb{R}^{n \times d}$ and usually proceeds via an iterative algorithm which updates the configuration matrix $X$ until a stopping criterion is met. Keeping the simulation settings as in Section \ref{SD},  the resulting configuration is shown in Figure \ref{fig:RawStress}. This suggests that the CLT may hold for raw stress just as well as for CMDS. However, this claim is at best a conjecture at present as perturbation analysis of stress minimization algorithms is significantly more involved.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Application: Omni Embedding of graphs and Hypothesis Testing}
+\section{Conjecture: CMDS on Omni Embedding of graphs and Hypothesis Testing}
+Given a collection of Random Dot Product Graphs: $A^{(1)}, A^{(2)}, \ldots, A^{(m)}$, each with $n$ vertices, \cite{OMNI} seeks to jointly embed all $m$ graphs into a common (prespecified) $d$-dimensional Euclidean space by embedding the $nm \times nm$ OMNI Matrix $\mathcal{M}$ given by
+$$
+\mathcal{M} :=
+\begin{bmatrix}
+     A^{(1)}       & \frac{A^{(1)} + A^{(2)}}{2} & \frac{A^{(1)} + A^{(3)}}{2} & \dots & \frac{A^{(1)} + A^{(m)}}{2} \\
+    \frac{A^{(2)} + A^{(2)}}{2}     & A^{(2)} & \frac{A^{(2)} + A^{(3)}}{2} & \dots & \frac{A^{(2)} + A^{(m)}}{2} \\
+    \vdots & \vdots & \vdots & \ldots & \vdots \\
+    \frac{A^{(m)} + A^{(1)}}{2} & \frac{A^{(m)} + A^{(2)}}{2} & \frac{A^{(m)} + A^{(3)}}{2} & \dots & A^{(m)}
+\end{bmatrix}.
+$$
+Using the notation in \cite{OMNI}, let $S_\M$ represent the $d \times d$ matrix of top $d$ eigenvalues of $\M$, ordered by magnitude, and let $U_\M$ be the $mn \times d$-dimensional matrix of associated eigenvectors. Define the omnibus embedding, denoted OMNI($\mathcal{M}$), by $U_\M S^{1/2}_\M$, note that OMNI($\mathcal{M}$) produces $m$ separate points in Euclidean for each graph vertex, effectively one such point for each copy of the multiple graphs in our sample. Furthermore, denote 
+\begin{equation}
+    U_\M S^{1/2}_\M =
+\begin{bmatrix}
+     \hat{X}^{(1)}\\
+     \hat{X}^{(2)}\\
+     \vdots \\
+     \hat{X}^{(m)}
+\end{bmatrix}
+\end{equation}
+where each $\hat{X}^{(i)}$ is an $n \times d$ matrix representing the embedding of the $i$th random graph in $d$ dimension. 
 
+As pointed out in \cite{OMNI}, the omnibus embedding introduces alignment between graphs by placing an average on the off-diagonal blocks of $\M$, merely considering a Frobenius norm difference between blocks of the omnibus embedding 
+$\| \hat{X}^{(i)} - \hat{X}^{(j)} \|_{F}$
+without any Procrustes alignments provides meaningful discrimination between graphs with different latent positions. Specifically, we can construct an $m \times m$ distance matrix $\Delta$ given by $\Delta_{ij} := \| \hat{X}^{(i)} - \hat{X}^{(j)} \|_{F}$ as an estimation for the Frobenius distance matrix $D$ between true latent positions $ D_{ij} := \| X^{(i)} - X^{(j)} \|_{F}$, where $X^{(i)}$ is the true latent position for the $i$th graph. That is, $\Delta = D + E $ for some $m \times m$ noise matrix $E$. \textcolor{red}{(Note that the entries of $E$ are correlated. Furthermore, $\mathbb{E}[E] = 0$ only when all the $m$ graphs shares the same underlying true latent position. Those two observations make the proof of the following conjectures quite a bit more challenging).}
+
+A natural thing to do now is to perform classical multidimensional scaling (CMDS) on $\Delta$ and $D$ and compare the resulting configuration matrix $\hat{\G}$ = CMDS($\Delta$) and $\G$ = CMDS($D$), and we propose the following conjecture:
+\begin{Conjecture}
+Using the above notations, we propose:
+$$ \lim_{m {\to} \infty} \mathbb{P} \{\sqrt{m} [(\hat{\G}W_m)_i - (\G)_i ]\leq \alpha\} = \int_{supp \textrm{F}} \Phi(\alpha, \Sigma(\emph{z})) dF(\emph{z}) $$ where $z$'s depends on the true underlying distribution of the latent positions $X$ of the graphs.
+\end{Conjecture}
 
 
 
@@ -445,15 +475,18 @@ We will utilize the following observation repeatedly in our presentation.
 \end{observation}
 
 We remind our readers the following notations for the subsequent presentation. 
- Recall that $B = -\tfrac{1}{2} P D^{(2)} P$ and $\hat{B} = -\frac{1}{2} P \Delta^{(2)} P$ are the double centering of $D^{(2)}$ and $\Delta^{(2)}$, respectively. If $D^{(2)}$ 
-is a Euclidean distance matrix whose elements are $D_{ij} = \|Z_i -Z_j\|$, then $B = P Z Z^{\top} P$. In particular, $U_B S_B^{1/2} = P Z \tilde{W}$ for some $d \times d$ orthogonal matrix $\tilde{W}$. The $i$th row of $U_B S_B^{1/2}$ is then $\tilde{W}_n^{\top} (Z_i - \bar{Z})$. Now let $W^{*}$ be the orthogonal matrix satisfying $W^{*} = \argmin_{W} \|U_B^{\top} U_{\hat{B}} - W\|_{F}$. %Our main goal is to investigate the quantity $\hat{X} - U_B S_B^{1/2} W^* $. 
+ Recall that 
+ $$B = -\tfrac{1}{2} P D^{(2)} P$$ 
+ and $$\hat{B} = -\frac{1}{2} P \Delta^{(2)} P$$
+  are the double centering of $D^{(2)}$ and $\Delta^{(2)}$, respectively. If $D^{(2)}$ 
+is a Euclidean distance matrix whose elements are $D_{ij} = \|Z_i -Z_j\|,$ then $$B = P Z Z^{\top} P.$$ In particular, $$U_B S_B^{1/2} = P Z \tilde{W}$$ for some $d \times d$ orthogonal matrix $\tilde{W}$. The $i$th row of $U_B S_B^{1/2}$ is then $\tilde{W}_n^{\top} (Z_i - \bar{Z}).$ Now let $W^{*}$ be the orthogonal matrix satisfying $$W^{*} = \argmin_{W} \|U_B^{\top} U_{\hat{B}} - W\|_{F}.$$ 
 The following lemma provides a decomposition for $\hat{X} - U_B S_B^{1/2} W^*$ into a sum of several matrices. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lemma}
 \label{appthm2}
-  Let $W^{*}$ be the orthogonal matrix satisfying $W^{*} = \argmin_{W} \|U_B^{\top} U_{\hat{B}} - W\|$. Then 
+  Let $W^{*}$ be the orthogonal matrix satisfying $$W^{*} = \argmin_{W} \|U_B^{\top} U_{\hat{B}} - W\|.$$ Then 
       \begin{align}
-          \hat{X} - U_B S_B^{1/2} W^*  &=   ( \hat{B} - B) U_B S_B^{-1/2} W^{*}  \label{term1}\\
+          \hat{X} - U_B S_B^{1/2} W^*  =&   ( \hat{B} - B) U_B S_B^{-1/2} W^{*}  \label{term1}\\
           & - (\hat{B} - B) U_B (S_{B}^{-1/2} W^{*} - W^{*} S_{\hat{B}}^{-1/2})  - U_B U_B^{\top} (\hat{B} - B) U_B W^* S_{\hat{B}}^{-1/2}      \label{term3}\\
           & + (I - U_B U_B^{\top}) (\hat{B} - B) (U_{\hat{B}} - U_B W^{*}) S_{\hat{B}}^{-1/2}     \label{term4}\\
           & + U_B (U_B^{\top} U_{\hat{B}} - W^*) S_{\hat{B}}^{1/2} + U_B (W^{*} S_{\hat{B}}^{1/2} - S_B^{1/2} W^{*})     \label{term6}
@@ -463,30 +496,32 @@ The following lemma provides a decomposition for $\hat{X} - U_B S_B^{1/2} W^*$ i
 We have 
         \begin{align*}
           \hat{X} - U_B S_B^{1/2} W^*  
-          & = U_{\hat{B}} S_{\hat{B}}^{1/2} - U_B W^* S_{\hat{B}}^{1/2} + U_B (W^* S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^*) \\
-          & = U_{\hat{B}} S_{\hat{B}}^{1/2} - U_B U_B^{\top} U_{\hat{B}} S_{\hat{B}}^{1/2} + U_B U_B^{\top} U_{\hat{B}} S_{\hat{B}}^{1/2} - U_B W^* S_{\hat{B}}^{1/2} + U_B (W^* S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^*) \\
-          & = (I - U_B U_B^{\top}) \hat{B} U_{\hat{B}} S_{\hat{B}}^{-1/2} + U_B (U_B^{\top} U_{\hat{B}} - W^{*}) S_{\hat{B}}^{1/2} + U_B (W^* S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^*) \\
-          &= (I - U_B U_B^{\top}) (\hat{B} - B) U_{\hat{B}} S_{\hat{B}}^{-1/2} + U_B (U_B^{\top} U_{\hat{B}} - W^*) S_{\hat{B}}^{1/2} + U_B (W^* S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^*). 
+           = & U_{\hat{B}} S_{\hat{B}}^{1/2} - U_B W^* S_{\hat{B}}^{1/2} + U_B (W^* S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^*) \\
+           = & U_{\hat{B}} S_{\hat{B}}^{1/2} - U_B U_B^{\top} U_{\hat{B}} S_{\hat{B}}^{1/2} + U_B U_B^{\top} U_{\hat{B}} S_{\hat{B}}^{1/2} - U_B W^* S_{\hat{B}}^{1/2} \\
+          & + U_B (W^* S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^*) \\
+           = & (I - U_B U_B^{\top}) \hat{B} U_{\hat{B}} S_{\hat{B}}^{-1/2} + U_B (U_B^{\top} U_{\hat{B}} - W^{*}) S_{\hat{B}}^{1/2} + U_B (W^* S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^*) \\
+          = & (I - U_B U_B^{\top}) (\hat{B} - B) U_{\hat{B}} S_{\hat{B}}^{-1/2}\\
+          & + U_B (U_B^{\top} U_{\hat{B}} - W^*) S_{\hat{B}}^{1/2} + U_B (W^* S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^*). 
         \end{align*}
-        We used the facts $ U_B U_B^\top B = B$ and $U_{\hat{B}} S_{\hat{B}}^{1/2} = \hat{B} U_{\hat{B}} S_{\hat{B}}^{-1/2}$ in the above equalities. The last two terms of the above display is Eq.~\eqref{term6}. Denote by $R$ the term  
-        $(I - U_B U_B^{\top}) (\hat{B} - B) U_{\hat{B}} S_{\hat{B}}^{-1/2}$, we have
+        We used the facts $ U_B U_B^\top B = B$ and $U_{\hat{B}} S_{\hat{B}}^{1/2} = \hat{B} U_{\hat{B}} S_{\hat{B}}^{-1/2}$ in the above equalities. The last two terms of the above display is Eq.~\eqref{term6}. 
+        Denote  
+        $$R :=(I - U_B U_B^{\top}) (\hat{B} - B) U_{\hat{B}} S_{\hat{B}}^{-1/2},$$ we then have
         \begin{equation*}
         \begin{split}
-        R & 
-            =  (I - U_B U_B^{\top}) (\hat{B} - B) ( U_BW^* + U_{\hat{B}} - U_{B} W^{*}) S_{\hat{B}}^{-1/2}   \\
-          & = (\hat{B} -B) U_B W^* S_{\hat{B}}^{-1/2} - U_B U_B^{\top} (\hat{B} - B) U_B W^* S_{\hat{B}}^{-1/2} + (I - U_B U_B^{\top}) (\hat{B} - B) (U_{\hat{B}} - U_{B} W^{*}) S_{\hat{B}}^{-1/2} 
-          \\
-          & = ( \hat{B} - B) U_B S_B^{-1/2} W^{*} 
-           - (\hat{B} - B) U_B (S_{B}^{-1/2} W^{*} - W^{*} S_{\hat{B}}^{-1/2}) 
-           - U_B U_B^{\top} (\hat{B} - B) U_B W^* S_{\hat{B}}^{-1/2} \\
-           & + (I - U_B U_B^{\top}) (\hat{B} - B) (U_{\hat{B}} - U_{B} W^{*})S_{\hat{B}}^{-1/2}
+        R  = & (I - U_B U_B^{\top}) (\hat{B} - B) ( U_BW^* + U_{\hat{B}} - U_{B} W^{*}) S_{\hat{B}}^{-1/2}   \\
+            = & (\hat{B} -B) U_B W^* S_{\hat{B}}^{-1/2} - U_B U_B^{\top} (\hat{B} - B) U_B W^* S_{\hat{B}}^{-1/2} \\
+          & + (I - U_B U_B^{\top}) (\hat{B} - B) (U_{\hat{B}} - U_{B} W^{*}) S_{\hat{B}}^{-1/2}  \\
+           = & ( \hat{B} - B) U_B S_B^{-1/2} W^{*} 
+           - (\hat{B} - B) U_B (S_{B}^{-1/2} W^{*} - W^{*} S_{\hat{B}}^{-1/2}) \\
+          & - U_B U_B^{\top} (\hat{B} - B) U_B W^* S_{\hat{B}}^{-1/2} 
+            + (I - U_B U_B^{\top}) (\hat{B} - B) (U_{\hat{B}} - U_{B} W^{*})S_{\hat{B}}^{-1/2}
            \end{split}
         \end{equation*}
         The four terms in the above display are identical to that in Eq.~\eqref{term1} through Eq.~\eqref{term4}.
 \end{proof}
 
  Lemma~\ref{appthm2} implies
- $$\hat{X} {W^*}^{\top} \tilde{W}_n - U_B S_B^{1/2} \tilde{W}_n = \hat{X} {W^*}^{\top} \tilde{W}_n - PZ = (\hat{B} - B) U_B S_B^{-1/2} \tilde{W}_n + R_n \tilde{W}_n$$ where $R_n$ are the matrices in Eq.~\eqref{term3} through Eq.~\eqref{term6}. The essential term is $(\hat{B} - B) U_B S_B^{-1/2} \tilde{W}_n$. We analyzed the rows of this matrix in Lemma~\ref{appthm3} where we show that they converge to multivariate normals. Meanwhile, Lemma~\ref{appthm4} shows that the rows of the matrices $R_n$, when scaled by $n^{1/2}$, converge to $0$ in probability. Combining these results yield Theorem 2. A few minor changes to the covariance computation in the proof of Lemma~\ref{appthm3} also yield Theorem~\ref{main_theorem_D^2+E} and Theorem~\ref{main_theorem_matrix_completion}.
+ $$\hat{X} {W^*}^{\top} \tilde{W}_n - U_B S_B^{1/2} \tilde{W}_n = \hat{X} {W^*}^{\top} \tilde{W}_n - PZ = (\hat{B} - B) U_B S_B^{-1/2} \tilde{W}_n + R_n \tilde{W}_n$$ where $R_n$ are the matrices in Eq.~\eqref{term3} through Eq.~\eqref{term6}. The essential term is $$(\hat{B} - B) U_B S_B^{-1/2} \tilde{W}_n.$$ We analyzed the rows of this matrix in Lemma~\ref{appthm3} where we show that they converge to multivariate normals. Meanwhile, Lemma~\ref{appthm4} shows that the rows of the matrices $R_n$, when scaled by $n^{1/2}$, converge to $0$ in probability. Combining these results yield Theorem 2. A few minor changes to the covariance computation in the proof of Lemma~\ref{appthm3} also yield Theorem~\ref{main_theorem_D^2+E} and Theorem~\ref{main_theorem_matrix_completion}.
   % the matrix $W_n$ in the statment of Theorem 2 is then $W_n{W^*}^{\top} \tilde{W}_n$ Indeed, the term $\hat{X} {W^*}^{\top} \tilde{W}_n$ can be denoted by $\hat{X} W_n$ for some orthogonal matrix ${W}_n= {W^*}^{\top} \tilde{W}_n$ identical to that in the statement of Theorem 1,2, and 3, while the rows of $U_B S_B^{1/2} \tilde{W}_n$ is, as we observed earlier, simply $(Z_i - \bar{Z})$. 
 
 \begin{lemma}
@@ -506,7 +541,8 @@ We have
         & = - n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n [P(D \circ E  + \frac{E^2}{2} )PZ]_{i}\\
         & = - n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[ P \Bigl(D \circ E + \frac{E^2 - \sigma^2 1_n 1_n^{\top}}{2}\Bigr) P Z\Bigr]_{i}
     \end{align*}
-The last equality holds since  $P 1_n = 0$. Now $PZ = Z - 1_n \bar{Z} = Z - 1_n \mu^{\top} + \tilde{R}_n$ where $\|\tilde{R}_n\| = O(n^{-1/2})$ with high probability.  
+The last equality holds since  $P 1_n = 0$. Now 
+$$PZ = Z - 1_n \bar{Z} = Z - 1_n \mu^{\top} + \tilde{R}_n$$ where $\|\tilde{R}_n\| = O(n^{-1/2})$ with high probability.  
 Therefore,
     \begin{equation*}
    % \label{eq:6}
@@ -573,7 +609,7 @@ We start with a bound for the spectral norm of $B - \hat{B}$.
     & \leq \|D \circ E\| + \frac{1}{2} \| E^2 - \mathbb{E} [E^2] \| \textrm{ (since $\|P\| = 1.)$ }\\
     & = \mathcal{O}(\sqrt{n}) + \mathcal{O}(\sqrt{n \log n})
   \end{align*}
-  Note that here we used $\mathbb{E}[D \circ E] = 0$ and $\mathbb{E}[\frac{1}{2}P E^2 P ] = 0$. Each entries of $D \circ E$ is of sub-Gaussian distribution with mean $0$ and each entries of $E^2 - \mathbb{E} [E^2]$ is of sub-exponential distribution with mean $0$. An application of Theorem 4.4.5 in \cite{HDP} and Matrix Bernstein for the sub-exponential case in \cite{tropp2012user} gives the desired result.
+  Note that here we used $\mathbb{E}[D \circ E] = 0$ and $\mathbb{E}[\frac{1}{2}P E^2 P ] = 0$. Each entries of $D \circ E$ is of sub-Gaussian distribution with mean $0$ and each entries of $E^2 - \mathbb{E} [E^2]$ is of sub-exponential distribution with mean $0$. An application of Theorem 4.4.5 in \cite{HDP} and Matrix Bernstein for the sub-exponential case gives the desired result.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -583,7 +619,9 @@ We start with a bound for the spectral norm of $B - \hat{B}$.
 \end{lemma}
 \begin{proof}
   For any matrix $H$, the nonzero eigenvalues of $H^\top H$ are the same as those $HH^\top $, so $\lambda_i(XX^\top) = \lambda_i(X^\top X)$. In what follows, we remind the reader that $X$ is a matrix whose rows are the transposes of the column vectors $X_i$, and $Y$ is a d-dimensional vector that is independent from and has the same distribution as that of the $X_i$.
-  We observe that $(X^\top X - n \mathbb{E}[YY^\top] )_{ij} = \sum\limits_{k=1}^{n} (X_{ki}X_{kj} - \mathbb{E}[Y_iY_j])$ is a sum of $n$ independent mean-zero sub-Gaussian random variables.
+  We observe that 
+  $$(X^\top X - n \mathbb{E}[YY^\top] )_{ij} = \sum\limits_{k=1}^{n} (X_{ki}X_{kj} - \mathbb{E}[Y_iY_j])$$
+   is a sum of $n$ independent mean-zero sub-Gaussian random variables.
 By a general Hoeffding's inequality for sub-gaussian random variables \citep{HDP}, for all $i, j \in [d]$, 
 $$\mathbb{P}[|(X^\top X - n\mathbb{E}[YY^\top])_{ij}|  \geq t]  \leq 2 \exp\{ \frac{-ct^2}{nM} \},$$  where $M = \max\limits_{k} 
 \|(X_{ki}X_{kj} - \mathbb{E}[Y_iY_j] )\|_{\varphi_2}^2$. Therefore,
@@ -638,12 +676,15 @@ Recall that a random vector $X$ is sub-exponential if $\mathbb{P}[ | X | > t] \l
    This gives 
    \begin{align*}
      \begin{array}{rl}
-      \|W^{*}S_{\hat{B}} - S_B W^{*}\|_{F} &
-      \leq \| (U_B^{\top} U_{\hat{B}} - W^{*}) (S_{\hat{B}} + S_B) \|_{F} + \| U_B^{\top} (\hat{B} - B) R \|_{F} + \| U_B^{\top} (\hat{B} - B) U_B U_B^{\top} U_{\hat{B}}\|_{F} \\
-      & \leq  \| (U_B^{\top} U_{\hat{B}} - W^{*})\|_{F}  (\|S_{\hat{B}}\| + \|S_B\|) + \| U_B^{\top} (\hat{B} - B) R \|_{F} + \| U_B^{\top} (\hat{B} - B) U_B U_B^{\top} U_{\hat{B}}\|_{F} \\
-      & \leq  \|W_1 W_2^{\top} - U_B^{\top} {U_{\hat{B}}}\|_{F} (\mathcal{O}(n) + \mathcal{O}(n)) + \| U_B^{\top} (\hat{B} - B) R \|_{F} + \| U_B^{\top} (\hat{B} - B) U_B \|_{F} \\
-      & \leq \mathcal{O}(n^{-1}) (\mathcal{O}(n) + \mathcal{O}(n)) + \mathcal{O}(\log n)  + \| U_B^{\top} (\hat{B} - B) U_B \|_{F} \\
-      & = \mathcal{O}( \log n) + \| U_B^{\top} (\hat{B} - B) U_B \|_{F}.
+      \|W^{*}S_{\hat{B}} - S_B W^{*}\|_{F} 
+      \leq & \| (U_B^{\top} U_{\hat{B}} - W^{*}) (S_{\hat{B}} + S_B) \|_{F} + \| U_B^{\top} (\hat{B} - B) R \|_{F} \\
+      & + \| U_B^{\top} (\hat{B} - B) U_B U_B^{\top} U_{\hat{B}}\|_{F} \\
+       \leq & \| (U_B^{\top} U_{\hat{B}} - W^{*})\|_{F}  (\|S_{\hat{B}}\| + \|S_B\|) + \| U_B^{\top} (\hat{B} - B) R \|_{F} \\
+       & + \| U_B^{\top} (\hat{B} - B) U_B U_B^{\top} U_{\hat{B}}\|_{F} \\
+       \leq & \|W_1 W_2^{\top} - U_B^{\top} {U_{\hat{B}}}\|_{F} (\mathcal{O}(n) + \mathcal{O}(n)) + \| U_B^{\top} (\hat{B} - B) R \|_{F}\\
+       &  + \| U_B^{\top} (\hat{B} - B) U_B \|_{F} \\
+      \leq & \mathcal{O}(n^{-1}) (\mathcal{O}(n) + \mathcal{O}(n)) + \mathcal{O}(\log n)  + \| U_B^{\top} (\hat{B} - B) U_B \|_{F} \\
+      = & \mathcal{O}( \log n) + \| U_B^{\top} (\hat{B} - B) U_B \|_{F}.
      \end{array}
    \end{align*}
    Now consider the term $ U_B^{\top} (\hat{B} - B) U_B \in \mathbb{R}^{d \times d}$. If we denote $U_i$ be the $i$th column of $U_B$, then for each $i, j$th entry, we have 
@@ -667,15 +708,17 @@ Recall that a random vector $X$ is sub-exponential if $\mathbb{P}[ | X | > t] \l
     Finally, consider $ \|W^{*} S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^{*}\|_{F}.$ The $i, j$th entry of $W^{*} S_{\hat{B}}^{1/2} - S_{B}^{1/2} W^{*}$ is 
     \begin{align*}
     {{W^{*}}_{ij}} ( {\lambda_{j}}^{1/2}(\hat{B}) -  {\lambda_{i}}^{1/2}({B})) 
-    = {{W^{*}}_{ij}} \frac{{\lambda_{j}}(\hat{B}) -  {\lambda_{i}}({B})} {{\lambda_{j}}^{1/2}(\hat{B}) +  {\lambda_{i}}^{1/2}({B})} 
-     \leq {{W^{*}}_{ij}} \frac{{\lambda_{j}}(\hat{B}) -  {\lambda_{i}}({B})}{\Omega(\sqrt{n})} 
-     = \mathcal{O}(n^{-\frac{1}{2}} \log  n),
+    = & {{W^{*}}_{ij}} \frac{{\lambda_{j}}(\hat{B}) -  {\lambda_{i}}({B})} {{\lambda_{j}}^{1/2}(\hat{B}) +  {\lambda_{i}}^{1/2}({B})} 
+     \leq  {{W^{*}}_{ij}} \frac{{\lambda_{j}}(\hat{B}) -  {\lambda_{i}}({B})}{\Omega(\sqrt{n})} \\
+     = & \mathcal{O}(n^{-\frac{1}{2}} \log  n),
     \end{align*}
     as desired (note in the last inequality, we used the first part of this Lemma.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 We now proceed to prove Lemma \ref{appthm4}.
+
 \begin{proof}[Proof of Lemma~\ref{appthm4}]
+
   To show Eq.~\eqref{eq:1}, we have
   \begin{align*}
     \sqrt{n} \| (\hat{B} -B) U_B (W^{*} S_{\hat{B}}^{-1/2} - S_B^{-1/2} W^{*}) \|_F 

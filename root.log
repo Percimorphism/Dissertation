@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 DEC 2018 03:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAR 2019 12:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -463,15 +463,6 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \@float@every@algorithm=\toks28
 \c@algorithm=\count136
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count137
-\c@ALC@line=\count138
-\c@ALC@rem=\count139
-\c@ALC@depth=\count140
-\ALC@tlm=\skip72
-\algorithmicindent=\skip73
-)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup7
@@ -523,10 +514,10 @@ ode.tex
 \pgf@yc=\dimen156
 \w@pgf@writea=\write4
 \r@pgf@reada=\read1
-\c@pgf@counta=\count141
-\c@pgf@countb=\count142
-\c@pgf@countc=\count143
-\c@pgf@countd=\count144
+\c@pgf@counta=\count137
+\c@pgf@countb=\count138
+\c@pgf@countc=\count139
+\c@pgf@countd=\count140
 \t@pgf@toka=\toks33
 \t@pgf@tokb=\toks34
 \t@pgf@tokc=\toks35
@@ -547,8 +538,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count145
-\pgfsyssoftpath@bigbuffer@items=\count146
+\pgfsyssoftpath@smallbuffer@items=\count141
+\pgfsyssoftpath@bigbuffer@items=\count142
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -577,7 +568,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen157
-\pgfmath@count=\count147
+\pgfmath@count=\count143
 \pgfmath@box=\box37
 \pgfmath@toks=\toks36
 \pgfmath@stack@operand=\toks37
@@ -602,7 +593,7 @@ code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count148
+\c@pgfmathroundto@lastzeros=\count144
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
@@ -640,7 +631,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box38
 \pgf@hbox=\box39
 \pgf@layerbox@main=\box40
-\pgf@picture@serial@count=\count149
+\pgf@picture@serial@count=\count145
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
@@ -675,7 +666,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 e.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen181
-\pgf@sys@shading@range@num=\count150
+\pgf@sys@shading@range@num=\count146
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -738,7 +729,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count151
+\pgf@plot@mark@count=\count147
 \pgfplotmarksize=\dimen186
 )
 \tikz@lastx=\dimen187
@@ -751,19 +742,19 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box44
 \tikz@tempbox=\box45
 \tikz@tempbox@bg=\box46
-\tikztreelevel=\count152
-\tikznumberofchildren=\count153
-\tikznumberofcurrentchild=\count154
-\tikz@fig@count=\count155
+\tikztreelevel=\count148
+\tikznumberofchildren=\count149
+\tikznumberofcurrentchild=\count150
+\tikz@fig@count=\count151
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count156
-\pgfmatrixcurrentcolumn=\count157
-\pgf@matrix@numberofcolumns=\count158
+\pgfmatrixcurrentrow=\count152
+\pgfmatrixcurrentcolumn=\count153
+\pgf@matrix@numberofcolumns=\count154
 )
-\tikz@expandcount=\count159
+\tikz@expandcount=\count155
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -777,37 +768,57 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen193
-)) (./root.aux (./chapter0.aux) (./chapter1.aux) (./chapter2.aux)
-(./CV.aux))
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count156
+\c@ALG@rem=\count157
+\c@ALG@nested=\count158
+\ALG@tlm=\skip72
+\ALG@thistlm=\skip73
+\c@ALG@Lnr=\count159
+\c@ALG@blocknr=\count160
+\c@ALG@storecount=\count161
+\c@ALG@tmpcounter=\count162
+\ALG@tmplength=\skip74
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (./root.aux (./chapter0.aux) (./chapter1.aux) (./chapter2.aux)
+(./chapter3.aux) (./CV.aux))
 \openout1 = `root.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
-LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count160
+\scratchcounter=\count163
 \scratchdimen=\dimen194
 \scratchbox=\box47
-\nofMPsegments=\count161
-\nofMParguments=\count162
+\nofMPsegments=\count164
+\nofMParguments=\count165
 \everyMPshowfont=\toks41
-\MPscratchCnt=\count163
+\MPscratchCnt=\count166
 \MPscratchDim=\dimen195
-\MPnumerator=\count164
-\makeMPintoPDFobject=\count165
+\MPnumerator=\count167
+\makeMPintoPDFobject=\count168
 \everyMPtoPDFconversion=\toks42
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -841,18 +852,18 @@ Package caption Info: End \AtBeginDocument code.
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 98.
+Package hyperref Info: Link coloring OFF on input line 103.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count166
+\c@section@level=\count169
 )
-LaTeX Info: Redefining \ref on input line 98.
-LaTeX Info: Redefining \pageref on input line 98.
-LaTeX Info: Redefining \nameref on input line 98.
+LaTeX Info: Redefining \ref on input line 103.
+LaTeX Info: Redefining \pageref on input line 103.
+LaTeX Info: Redefining \nameref on input line 103.
 
 (./root.out) (./root.out)
 \@outlinefile=\write5
@@ -883,44 +894,45 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] [3
+] [3] [4
 
-] [4] [5
+] [5]
+[6
 
-]
-(./root.toc [6
+] (./root.toc [7
 
-])
+] [8])
 \tf@toc=\write6
 \openout6 = `root.toc'.
 
- [7] (./root.lot)
+ [9] (./root.lot)
 \tf@lot=\write7
 \openout7 = `root.lot'.
 
- [8
+ [10
 
 ] (./root.lof)
 \tf@lof=\write8
 \openout8 = `root.lof'.
 
- [9
+ [11
 
 ])
 \openout2 = `chapter1.aux'.
 
- (./chapter1.tex
+
+(./chapter1.tex
 Chapter 1.
 [1
 
 
 
-] Excluding 'comment' comment.) [2] [3]
+] [2] [3] [4] Excluding 'comment' comment.) [5]
 \openout2 = `chapter2.aux'.
 
  (./chapter2.tex
 Chapter 2.
-[4
+[6
 
 
 
@@ -945,7 +957,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 37.
 
-[5]
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 61.
@@ -958,93 +970,93 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 61.
 
-[6] [7] [8] [9] [10]
+[8] [9] [10] [11] [12] [13]
 Overfull \hbox (4.16098pt too wide) in paragraph at lines 199--206
 []\OT1/cmr/m/it/12 We can re-lax the com-mon vari-ance re-quire-ment (iii) in T
 he-o-rem []2.4.1[].
  []
 
-[11]
+[14]
 Overfull \hbox (9.98418pt too wide) in paragraph at lines 242--253
 []\OT1/cmr/m/it/12 Let
  []
 
-[12] [13]
+[15] [16]
 Overfull \hbox (26.62413pt too wide) in paragraph at lines 298--320
 [][] 
  []
 
-[14] <./figure/n_50_D+E_2.png, id=399, 537.00626pt x 510.90875pt>
+<./figure/n_50_D+E_2.png, id=527, 537.00626pt x 510.90875pt>
 File: ./figure/n_50_D+E_2.png Graphic file (type png)
 
 <use ./figure/n_50_D+E_2.png>
 Package pdftex.def Info: ./figure/n_50_D+E_2.png used on input line 331.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/n_100_D+E_2.png, id=401, 537.00626pt x 510.90875pt>
+<./figure/n_100_D+E_2.png, id=529, 537.00626pt x 510.90875pt>
 File: ./figure/n_100_D+E_2.png Graphic file (type png)
 
 <use ./figure/n_100_D+E_2.png>
 Package pdftex.def Info: ./figure/n_100_D+E_2.png used on input line 333.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/n_500_D+E_2.png, id=402, 537.00626pt x 510.90875pt>
+<./figure/n_500_D+E_2.png, id=530, 537.00626pt x 510.90875pt>
 File: ./figure/n_500_D+E_2.png Graphic file (type png)
 
 <use ./figure/n_500_D+E_2.png>
 Package pdftex.def Info: ./figure/n_500_D+E_2.png used on input line 335.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/n_1000_D+E_2.png, id=403, 537.00626pt x 510.90875pt>
+<./figure/n_1000_D+E_2.png, id=531, 537.00626pt x 510.90875pt>
 File: ./figure/n_1000_D+E_2.png Graphic file (type png)
 
 <use ./figure/n_1000_D+E_2.png>
 Package pdftex.def Info: ./figure/n_1000_D+E_2.png used on input line 337.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
- [15] [16 <./figure/n_50_D+E_2.png> <./figure/n_100_D+E_2.png> <./figure/n_500_
+ [17] [18 <./figure/n_50_D+E_2.png> <./figure/n_100_D+E_2.png> <./figure/n_500_
 D+E_2.png> <./figure/n_1000_D+E_2.png>]
-<./figure/bottle_0.png, id=432, 182.6825pt x 180.675pt>
+<./figure/bottle_0.png, id=558, 182.6825pt x 180.675pt>
 File: ./figure/bottle_0.png Graphic file (type png)
 
 <use ./figure/bottle_0.png>
 Package pdftex.def Info: ./figure/bottle_0.png used on input line 347.
 (pdftex.def)             Requested size: 108.405pt x 107.21486pt.
 
-<./figure/bone_0.png, id=433, 210.7875pt x 189.70876pt>
+<./figure/bone_0.png, id=559, 210.7875pt x 189.70876pt>
 File: ./figure/bone_0.png Graphic file (type png)
 
 <use ./figure/bone_0.png>
 Package pdftex.def Info: ./figure/bone_0.png used on input line 349.
 (pdftex.def)             Requested size: 108.405pt x 97.56648pt.
 
-<./figure/wrench_0.png, id=434, 232.87pt x 204.765pt>
+<./figure/wrench_0.png, id=560, 232.87pt x 204.765pt>
 File: ./figure/wrench_0.png Graphic file (type png)
 
 <use ./figure/wrench_0.png>
 Package pdftex.def Info: ./figure/wrench_0.png used on input line 351.
 (pdftex.def)             Requested size: 108.405pt x 95.32095pt.
 
-<./figure/bottle.png, id=435, 503.8825pt x 386.44376pt>
+<./figure/bottle.png, id=561, 503.8825pt x 386.44376pt>
 File: ./figure/bottle.png Graphic file (type png)
 
 <use ./figure/bottle.png>
 Package pdftex.def Info: ./figure/bottle.png used on input line 358.
 (pdftex.def)             Requested size: 108.405pt x 83.13686pt.
- <./figure/bone.png, id=436, 510.90875pt x 393.47pt>
+ <./figure/bone.png, id=562, 510.90875pt x 393.47pt>
 File: ./figure/bone.png Graphic file (type png)
 
 <use ./figure/bone.png>
 Package pdftex.def Info: ./figure/bone.png used on input line 360.
 (pdftex.def)             Requested size: 108.405pt x 83.48367pt.
- <./figure/wrench.png, id=437, 489.83pt x 394.47375pt>
+ <./figure/wrench.png, id=563, 489.83pt x 394.47375pt>
 File: ./figure/wrench.png Graphic file (type png)
 
 <use ./figure/wrench.png>
 Package pdftex.def Info: ./figure/wrench.png used on input line 362.
 (pdftex.def)             Requested size: 108.405pt x 87.29611pt.
- [17 <./figure/bottle_0.png> <./figure/bone_0.png> <./figure/wrench_0.png> <./f
-igure/bottle.png> <./figure/bone.png> <./figure/wrench.png>]
-<./figure/Pairs_plot_noisy_total_linear_909.png, id=464, 537.00626pt x 366.3687
+ [19 <./figure/bottle_0.png> <./figure/bone_0.png> <./figure/wrench_0.png>] [20
+ <./figure/bottle.png> <./figure/bone.png> <./figure/wrench.png>]
+<./figure/Pairs_plot_noisy_total_linear_909.png, id=598, 537.00626pt x 366.3687
 4pt>
 File: ./figure/Pairs_plot_noisy_total_linear_909.png Graphic file (type png)
  <use ./figure/Pairs_plot_noisy_total_linear_909.png>
@@ -1056,8 +1068,8 @@ Overfull \hbox (49.68117pt too wide) in paragraph at lines 378--379
  [][] 
  []
 
-[18] [19 <./figure/Pairs_plot_noisy_total_linear_909.png>]
-<./figure/Uncommon_var_E_n_50.png, id=489, 537.00626pt x 510.90875pt>
+[21 <./figure/Pairs_plot_noisy_total_linear_909.png>]
+<./figure/Uncommon_var_E_n_50.png, id=619, 537.00626pt x 510.90875pt>
 File: ./figure/Uncommon_var_E_n_50.png Graphic file (type png)
 
 <use ./figure/Uncommon_var_E_n_50.png>
@@ -1065,7 +1077,7 @@ Package pdftex.def Info: ./figure/Uncommon_var_E_n_50.png used on input line 39
 3.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/Uncommon_var_E_n_100.png, id=490, 537.00626pt x 510.90875pt>
+<./figure/Uncommon_var_E_n_100.png, id=620, 537.00626pt x 510.90875pt>
 File: ./figure/Uncommon_var_E_n_100.png Graphic file (type png)
 
 <use ./figure/Uncommon_var_E_n_100.png>
@@ -1073,7 +1085,7 @@ Package pdftex.def Info: ./figure/Uncommon_var_E_n_100.png used on input line 3
 95.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/Uncommon_var_E_n_500.png, id=491, 537.00626pt x 510.90875pt>
+<./figure/Uncommon_var_E_n_500.png, id=621, 537.00626pt x 510.90875pt>
 File: ./figure/Uncommon_var_E_n_500.png Graphic file (type png)
 
 <use ./figure/Uncommon_var_E_n_500.png>
@@ -1081,7 +1093,7 @@ Package pdftex.def Info: ./figure/Uncommon_var_E_n_500.png used on input line 3
 97.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/Uncommon_var_E_n_1000.png, id=492, 537.00626pt x 510.90875pt>
+<./figure/Uncommon_var_E_n_1000.png, id=622, 537.00626pt x 510.90875pt>
 File: ./figure/Uncommon_var_E_n_1000.png Graphic file (type png)
 
 <use ./figure/Uncommon_var_E_n_1000.png>
@@ -1089,63 +1101,54 @@ Package pdftex.def Info: ./figure/Uncommon_var_E_n_1000.png used on input line
 399.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/raw_stress_n_50.png, id=499, 537.00626pt x 510.90875pt>
+<./figure/raw_stress_n_50.png, id=629, 537.00626pt x 510.90875pt>
 File: ./figure/raw_stress_n_50.png Graphic file (type png)
 
 <use ./figure/raw_stress_n_50.png>
 Package pdftex.def Info: ./figure/raw_stress_n_50.png used on input line 407.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/raw_stress_n_100.png, id=500, 537.00626pt x 510.90875pt>
+<./figure/raw_stress_n_100.png, id=630, 537.00626pt x 510.90875pt>
 File: ./figure/raw_stress_n_100.png Graphic file (type png)
 
 <use ./figure/raw_stress_n_100.png>
 Package pdftex.def Info: ./figure/raw_stress_n_100.png used on input line 409.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/raw_stress_n_500.png, id=501, 537.00626pt x 510.90875pt>
+<./figure/raw_stress_n_500.png, id=631, 537.00626pt x 510.90875pt>
 File: ./figure/raw_stress_n_500.png Graphic file (type png)
 
 <use ./figure/raw_stress_n_500.png>
 Package pdftex.def Info: ./figure/raw_stress_n_500.png used on input line 411.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
-<./figure/raw_stress_n_1000.png, id=502, 537.00626pt x 510.90875pt>
+<./figure/raw_stress_n_1000.png, id=632, 537.00626pt x 510.90875pt>
 File: ./figure/raw_stress_n_1000.png Graphic file (type png)
 
 <use ./figure/raw_stress_n_1000.png>
 Package pdftex.def Info: ./figure/raw_stress_n_1000.png used on input line 413.
 
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
- [20] [21 <./figure/Uncommon_var_E_n_50.png> <./figure/Uncommon_var_E_n_100.png
-> <./figure/Uncommon_var_E_n_500.png> <./figure/Uncommon_var_E_n_1000.png>]
-Overfull \hbox (27.31435pt too wide) in paragraph at lines 421--421
-[]\OT1/cmr/bx/n/20.74 Application: Omni Em-bed-ding of graphs
+ [22] [23 <./figure/Uncommon_var_E_n_50.png> <./figure/Uncommon_var_E_n_100.png
+> <./figure/Uncommon_var_E_n_500.png> <./figure/Uncommon_var_E_n_1000.png>] [24
+] [25 <./figure/raw_stress_n_50.png> <./figure/raw_stress_n_100.png> <./figure/
+raw_stress_n_500.png> <./figure/raw_stress_n_1000.png>] [26] [27] [28] [29]
+Overfull \hbox (27.02167pt too wide) in paragraph at lines 505--505
+[] 
  []
 
-[22] [23 <./figure/raw_stress_n_50.png> <./figure/raw_stress_n_100.png> <./figu
-re/raw_stress_n_500.png> <./figure/raw_stress_n_1000.png>] [24]
-Overfull \hbox (66.95607pt too wide) in paragraph at lines 470--470
+[30] [31] [32]
+Overfull \hbox (24.50427pt too wide) in paragraph at lines 554--554
+[] 
+ []
+
+[33]
+Overfull \hbox (3.68088pt too wide) in paragraph at lines 559--559
 [] 
  []
 
 
-Overfull \hbox (62.89752pt too wide) in paragraph at lines 484--484
-[] 
- []
-
-[25] [26]
-Overfull \hbox (24.50427pt too wide) in paragraph at lines 518--518
-[] 
- []
-
-[27]
-Overfull \hbox (3.68088pt too wide) in paragraph at lines 523--523
-[] 
- []
-
-
-Overfull \hbox (5.34047pt too wide) detected at line 527
+Overfull \hbox (5.34047pt too wide) detected at line 563
 [][]\OML/cmm/m/it/12 E[]\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 z[] \OMS/cmsy/m/n/12
  ^^@ \OML/cmm/m/it/12 Z[]\OMS/cmsy/m/n/12 k \OT1/cmr/m/n/12 + (\OML/cmm/m/it/12
  E[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 ^^[[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/
@@ -1158,17 +1161,12 @@ z[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Z[]\OMS/cmsy/m/n/12 k\OT1/cmr/m/n/12
  []
 
 
-Overfull \hbox (10.41795pt too wide) in paragraph at lines 534--534
+Overfull \hbox (10.41795pt too wide) in paragraph at lines 570--570
 [] 
  []
 
-[28] [29]
-
-Package natbib Warning: Citation `tropp2012user' on page 30 undefined on input 
-line 576.
-
-[30] [31] [32]
-Overfull \hbox (14.15137pt too wide) detected at line 637
+[34] [35] [36] [37] [38]
+Overfull \hbox (14.15137pt too wide) detected at line 675
 \OML/cmm/m/it/12 W[]S[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 S[]W[] \OT1/cmr/m
 /n/12 = (\OML/cmm/m/it/12 W[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 U[]U[]\OT1/
 cmr/m/n/12 )\OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 U[]\OT1/cmr
@@ -1179,13 +1177,8 @@ m/n/12 + \OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 U[]U[] \OMS/cmsy
 /m/n/12 ^^@ \OML/cmm/m/it/12 W[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
  []
 
-[33]
-Overfull \hbox (106.88225pt too wide) in paragraph at lines 648--648
-[] 
- []
-
-
-Overfull \hbox (3.02353pt too wide) detected at line 659
+[39] [40]
+Overfull \hbox (3.02353pt too wide) detected at line 700
 \U/msb/m/n/12 P\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 j []\OT1/cmr/m/n/12 ([][] \OMS
 /cmsy/m/n/12 ^^@ [][]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 V[]V[]\OMS/cmsy/m/n/12 j
  \OML/cmm/m/it/12 > t\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 2 [
@@ -1193,59 +1186,89 @@ Overfull \hbox (3.02353pt too wide) detected at line 659
  ; []\OT1/cmr/m/n/12 )[]
  []
 
-[34]
-Overfull \hbox (44.23561pt too wide) in paragraph at lines 673--673
+[41]
+Overfull \hbox (25.24838pt too wide) in paragraph at lines 728--728
 [] 
  []
 
-
-Overfull \hbox (25.24838pt too wide) in paragraph at lines 685--685
+[42] [43] [44]
+Overfull \hbox (4.74162pt too wide) in paragraph at lines 811--811
 [] 
  []
 
-[35] [36] [37] [38]
-Overfull \hbox (4.74162pt too wide) in paragraph at lines 768--768
-[] 
+[45] [46]) [47]
+\openout2 = `chapter3.aux'.
+
+ (./chapter3.tex
+Chapter 3.
+[48
+
+
+
+] [49] [50] [51] [52] [53] [54] [55] [56]
+Overfull \hbox (16.06828pt too wide) in paragraph at lines 192--210
+\OT1/cmr/m/n/12 splits are $\OMS/cmsy/m/n/12 ff\OT1/cmr/m/n/12 1\OMS/cmsy/m/n/1
+2 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ; \OT
+1/cmr/m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 6\OMS/cmsy/m/n/12 gg$\OT1/cmr/
+m/n/12 , $\OMS/cmsy/m/n/12 ff\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/1
+2 3\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 4\OML
+/cmm/m/it/12 ; \OT1/cmr/m/n/12 6\OMS/cmsy/m/n/12 gg\OML/cmm/m/it/12 ;$ \OT1/cmr
+/m/n/12 and $\OMS/cmsy/m/n/12 ff\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/
+n/12 3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; 
+\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 6\OMS/cmsy/m/n/12 gg$\OT1/cmr/m/n/12 . In the
+ case $\OMS/cmsy/m/n/12 ff\OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3
+\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 4\OML/cm
+m/m/it/12 ; \OT1/cmr/m/n/12 6\OMS/cmsy/m/n/12 gg$\OT1/cmr/m/n/12 ,
  []
 
-[39] [40]) [41] (./root.bbl [42
+[57]
+Overfull \hbox (4.1021pt too wide) in paragraph at lines 226--227
+[]\OT1/cmr/m/n/12 Equation ([]3.3[]) can be sim-pli-fied by not-ing that $\OML/
+cmm/m/it/12 z[] \OT1/cmr/m/n/12 = 1$ and $\OML/cmm/m/it/12 z[] \OT1/cmr/m/n/12 
+=
+ []
+
+[58] [59]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 267.
+) [60] [61] [62] [63] (./root.bbl [64
 
 
-] [43] [44] [45] [46]) [47]
+] [65] [66] [67] [68] [69]
+[70]) [71]
 \openout2 = `CV.aux'.
 
- (./CV.tex
-<Percy.jpg, id=741, 3517.14pt x 2344.76pt>
+ (./CV.tex <Percy.jpg, id=1044, 3517.14pt x 2344.76pt>
 File: Percy.jpg Graphic file (type jpg)
- <use Percy.jpg>
+
+<use Percy.jpg>
 Package pdftex.def Info: Percy.jpg used on input line 6.
 (pdftex.def)             Requested size: 144.52568pt x 96.35045pt.
-) [48
+) [72
 
 
  <./Percy.jpg>]
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
-(./root.aux (./chapter0.aux) (./chapter1.aux) (./chapter2.aux) (./CV.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
+ (./root.aux (./chapter0.aux)
+(./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./CV.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
 Package rerunfilecheck Info: File `root.out' has not changed.
-(rerunfilecheck)             Checksum: 2753E867D87C7858975C4BC4FF1F5BFE;1648.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
+(rerunfilecheck)             Checksum: 21487E9278C7D85B3B8227B553C03C26;2540.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
  ) 
 Here is how much of TeX's memory you used:
- 19837 strings out of 493014
- 365603 string characters out of 6133351
- 445683 words of memory out of 5000000
- 22755 multiletter control sequences out of 15000+600000
- 24937 words of font info for 91 fonts, out of 8000000 for 9000
+ 20394 strings out of 493014
+ 374414 string characters out of 6133351
+ 468767 words of memory out of 5000000
+ 23232 multiletter control sequences out of 15000+600000
+ 25238 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,19n,54p,1253b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,19n,54p,1387b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pf
 b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
@@ -1261,12 +1284,13 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on root.pdf (57 pages, 1181324 bytes).
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on root.pdf (83 pages, 1267644 bytes).
 PDF statistics:
- 851 PDF objects out of 1000 (max. 8388607)
- 722 compressed objects within 8 object streams
- 176 named destinations out of 1000 (max. 500000)
- 311 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1176 PDF objects out of 1200 (max. 8388607)
+ 1016 compressed objects within 11 object streams
+ 244 named destinations out of 1000 (max. 500000)
+ 407 words of extra memory for PDF output out of 10000 (max. 10000000)
 

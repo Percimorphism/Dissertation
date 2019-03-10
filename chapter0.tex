@@ -5,13 +5,11 @@
 \maketitle
 
 \begin{abstract}
-Classical multidimensional scaling is a widely used method in dimensionality reduction and manifold learning. 
-The method takes in a dissimilarity matrix and outputs a low-dimensional configuration matrix based on a spectral decomposition. 
-In this dissertation, we present three noise models and analyze the resulting configuration matrices, or embeddings. 
-In particular, we show that under each of the three noise models the resulting embedding gives rise to a central limit theorem. We also provide compelling simulations and real data illustrations of these central limit theorems. This perturbation analysis represents a significant advancement over previous results regarding classical multidimensional scaling behavior under randomness.
+Classical multidimensional scaling (CMDS) is a widely used method in dimensionality reduction and manifold learning. 
+The method takes in a dissimilarity matrix and outputs a low-dimensional configuration matrix based on a spectral decomposition.  In this dissertation, we present three noise models and analyze the resulting configuration matrices, or embeddings. In particular, we show that under each of the three noise models the resulting embedding gives rise to a central limit theorem. We also provide compelling simulations and real data illustrations of these central limit theorems. This perturbation analysis represents a significant advancement over previous results regarding classical multidimensional scaling behavior under randomness.
 
-\textcolor{red}{Now the second part is for Random Forest}
-
+\textcolor{red}{Now the second part is for Random Forest} 
+CMDS is a special case of a more general procedure called Manifold Learning, which is essentially required to achieve quality inferences for modern high-dimensional datasets.  Many manifold learning methods have been proposed, each with their own advantages and disadvantages. In this dissertation, building off recent advances in supervised learning, we modify the leading supervised decision forest method to support unsupervised learning, and therefore also nonlinear manifold learning.  The key differentiator between our Unsupervised Randomer Forest (URerf) and other manifold learning techniques is that URerF operates on low-dimensional sparse linear combinations of features, rather than either the full observed dimensionality, or one-dimensional marginals. We quantify the efficacy of URerF by computing precision-recall curves relative to the true latent manifold or class label (when it is known).  Empirical results on simulated data demonstrate that URerF is robust to high-dimensional noise, where as other methods, such as Isomap and UMAP, quickly deteriorate in such settings.
 
 \vspace{1cm}
 
@@ -22,15 +20,15 @@ Secondary Reader: Minh Tang
 
 \begin{acknowledgment}
 
-The past five years in graduate school has been nothing but pure joy and excitement for me. Much of the previous statement is only true because my advisor, Carey Priebe, without whom this journey will be impossible, let along enjoyable, so I want to thank him for his unconditional support and valuable advice at all levels. To Minh Tang and Avanti Athreya, I want to express my uttermost admiration for putting up with me and explain things over and over again to me when I am confused (which is most of the time). I also want to thank my co-authors and collaborators, including Nicolas Charon, Vince Lyzinski, Youngser Park and Joshua Vogelstein, who have all offered their help with patience in discussions over the past few years.
+The past five years in graduate school has been nothing but pure joy and excitement for me. Much of the previous statement is only true because my advisor, Carey Priebe, without whom this journey will be impossible, let along enjoyable, so I want to thank him for his support and valuable advice at all levels. To Minh Tang and Avanti Athreya, I want to express my uttermost admiration for putting up with me and explain things to me when I am confused (which is most of the time). I also want to thank my co-authors and collaborators, including Nicolas Charon, Vince Lyzinski, Youngser Park, Joshua Vogelstein and Randal Burns, who have all offered their help with patience in discussions over the past few years.
 
 
 Special thanks to Dan Naiman, Daniel Robinson for their time and suggestions in my Candidacy Exam and Raman Arora and 
 Katia Consani for their time and suggestions in my Graduate Board Exam.
 
 I also want express my appreciation for the faculty and staff of the Applied Mathematicss and Statistics Department at Johns Hopkins University. In particular, my thanks to John Wierman,  Edward Scheinerman,  Fred Torcaso, Donniell Fishkind, Tam\'{a}s Budav\'{a}ri for their kindness advice; and to Kristin Bechtel, Sandy Kirt, and Ann Gibbins for their help.
-My deepest thanks to my fellow students and friends at Hopkins for coffee, soccer games, and all the time we have spent together.
-Finally, my warmest thanks to my parents, Weiyang Li and Huiping Xu, whose unconditional love made me who I am (well, at least the good part). 
+My deepest thanks to my  friends: Joshua Cape, Heather Pastolic,  Wei-Chun Hung,  Hsi-Wei Hsieh, Jordan Yoder, Theo Drivas, Chu-Chi Lee, Meghana Madhyastha and Hayden Helm for keeping me sane during the past couple years.
+Finally, my warmest thanks to my parents, Weiyang Li and Huiping Xu, whose unconditional love made me who I am (well, at least the good part), and also to my first wife Cindy, for putting up with me.
 
 \end{acknowledgment}
 

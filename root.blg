@@ -4,51 +4,48 @@ The top-level auxiliary file: root.aux
 A level-1 auxiliary file: chapter0.aux
 A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
+A level-1 auxiliary file: chapter3.aux
 The style file: plainnat.bst
 A level-1 auxiliary file: CV.aux
-Database file #1: Bib.bib
-Warning--I didn't find a database entry for "tropp2012user"
-Warning--empty journal in Taghizadeh
-Warning--empty publisher in HDP
-You've used 34 entries,
+Database file #1: Bib.bib.bib
+You've used 51 entries,
             2773 wiz_defined-function locations,
-            893 strings with 11923 characters,
-and the built_in function-call counts, 16420 in all, are:
-= -- 1517
-> -- 907
-< -- 26
-+ -- 305
-- -- 271
-* -- 1373
-:= -- 2552
-add.period$ -- 148
-call.type$ -- 34
-change.case$ -- 186
-chr.to.int$ -- 34
-cite$ -- 70
-duplicate$ -- 718
-empty$ -- 1322
-format.name$ -- 335
-if$ -- 3471
-int.to.chr$ -- 1
+            997 strings with 14502 characters,
+and the built_in function-call counts, 24217 in all, are:
+= -- 2256
+> -- 1267
+< -- 43
++ -- 428
+- -- 376
+* -- 1978
+:= -- 3710
+add.period$ -- 201
+call.type$ -- 51
+change.case$ -- 271
+chr.to.int$ -- 50
+cite$ -- 102
+duplicate$ -- 1092
+empty$ -- 2002
+format.name$ -- 477
+if$ -- 5141
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 36
-newline$ -- 222
-num.names$ -- 140
-pop$ -- 338
+missing$ -- 54
+newline$ -- 307
+num.names$ -- 208
+pop$ -- 496
 preamble$ -- 1
-purify$ -- 157
+purify$ -- 226
 quote$ -- 0
-skip$ -- 551
+skip$ -- 839
 stack$ -- 0
-substring$ -- 597
-swap$ -- 76
-text.length$ -- 5
+substring$ -- 996
+swap$ -- 130
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 349
-warning$ -- 2
-while$ -- 141
+type$ -- 526
+warning$ -- 0
+while$ -- 220
 width$ -- 0
-write$ -- 534
-(There were 3 warnings)
+write$ -- 757

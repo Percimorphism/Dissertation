@@ -1,25 +1,37 @@
 \contentsline {chapter}{Abstract}{ii}{chapter*.1}
-\contentsline {chapter}{Acknowledgments}{iii}{chapter*.2}
-\contentsline {chapter}{List of Tables}{viii}{chapter*.5}
-\contentsline {chapter}{List of Figures}{ix}{chapter*.6}
+\contentsline {chapter}{Acknowledgments}{iv}{chapter*.2}
+\contentsline {chapter}{List of Tables}{x}{chapter*.5}
+\contentsline {chapter}{List of Figures}{xi}{chapter*.6}
 \select@language {english}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Multidimensional Scaling}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Random Forest for Manifold Learning}{3}{section.1.2}
-\contentsline {chapter}{\numberline {2}Classical Multidimensional Scaling with Perturbation}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Review of Classical Multidimensional Scaling}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}Noise Models and Embedding}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Model 1: $\Delta ^2 = D^2 + E$}{5}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Model 2: $\Delta = D + E$}{6}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Model 3: Matrix Completion}{7}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Related Works}{7}{section.2.3}
-\contentsline {section}{\numberline {2.4}Main Theorems}{10}{section.2.4}
-\contentsline {section}{\numberline {2.5}Empirical Results}{14}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Three Point-mass Simulated Data}{14}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Shape clustering}{15}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Discussion}{20}{section.2.6}
-\contentsline {section}{\numberline {2.7}Application: Omni Embedding of graphs and Hypothesis Testing}{24}{section.2.7}
-\contentsline {section}{\numberline {2.8}Proof of the Theorems}{24}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Proof of Theorem \ref {main_theorem_D+E}}{24}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}Adaptation for Theorem \ref {main_theorem_D^2+E} and \ref {main_theorem_matrix_completion}}{39}{subsection.2.8.2}
-\contentsline {chapter}{Vita}{48}{chapter*.15}
+\contentsline {section}{\numberline {1.2}Randomer Forest for Manifold Learning}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Classical Multidimensional Scaling under Noise}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Review of Classical Multidimensional Scaling}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Noise Models and Embedding}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Model 1: $\Delta ^2 = D^2 + E$}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Model 2: $\Delta = D + E$}{8}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Model 3: Matrix Completion}{9}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Related Works}{9}{section.2.3}
+\contentsline {section}{\numberline {2.4}Main Theorems}{12}{section.2.4}
+\contentsline {section}{\numberline {2.5}Empirical Results}{16}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Three Point-mass Simulated Data}{16}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Shape clustering}{19}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Discussion}{22}{section.2.6}
+\contentsline {section}{\numberline {2.7}Conjecture: CMDS on Omni Embedding of graphs and Hypothesis Testing}{26}{section.2.7}
+\contentsline {section}{\numberline {2.8}Proof of the Theorems}{28}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Proof of Theorem \ref {main_theorem_D+E}}{28}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Adaptation for Theorem \ref {main_theorem_D^2+E} and \ref {main_theorem_matrix_completion}}{45}{subsection.2.8.2}
+\contentsline {chapter}{\numberline {3}Manifold Denoising with Unsupervised Randomer Forest}{48}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{48}{section.3.1}
+\contentsline {section}{\numberline {3.2}Related Work}{51}{section.3.2}
+\contentsline {section}{\numberline {3.3}Unsupervised Randomer Forests}{53}{section.3.3}
+\contentsline {section}{\numberline {3.4}Algorithm}{55}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Overall algorithm}{55}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Splitting Criteria}{55}{subsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.2.1}Two-Means Splitting}{56}{subsubsection.3.4.2.1}
+\contentsline {subsubsection}{\numberline {3.4.2.2}Two-Means Splitting with FastBIC }{56}{subsubsection.3.4.2.2}
+\contentsline {subsubsection}{\numberline {3.4.2.3}2-GMM Splitting with BIC}{60}{subsubsection.3.4.2.3}
+\contentsline {subsection}{\numberline {3.4.3}Proximity Matrix Construction}{60}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Algorithms}{60}{section.3.5}
+\contentsline {chapter}{Vita}{72}{chapter*.15}
