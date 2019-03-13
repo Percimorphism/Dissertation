@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 MAR 2019 12:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 MAR 2019 17:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -789,23 +789,23 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (./root.aux (./chapter0.aux) (./chapter1.aux) (./chapter2.aux)
-(./chapter3.aux) (./CV.aux))
+(./chapter3.aux) (./chapter4.aux) (./CV.aux))
 \openout1 = `root.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
-LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -852,7 +852,7 @@ Package caption Info: End \AtBeginDocument code.
 Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
 (hyperref)                using 11in.
 
-Package hyperref Info: Link coloring OFF on input line 103.
+Package hyperref Info: Link coloring OFF on input line 105.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -861,9 +861,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count169
 )
-LaTeX Info: Redefining \ref on input line 103.
-LaTeX Info: Redefining \pageref on input line 103.
-LaTeX Info: Redefining \nameref on input line 103.
+LaTeX Info: Redefining \ref on input line 105.
+LaTeX Info: Redefining \pageref on input line 105.
+LaTeX Info: Redefining \nameref on input line 105.
 
 (./root.out) (./root.out)
 \@outlinefile=\write5
@@ -982,7 +982,7 @@ Overfull \hbox (9.98418pt too wide) in paragraph at lines 242--253
  []
 
 [15] [16]
-Overfull \hbox (26.62413pt too wide) in paragraph at lines 298--320
+Overfull \hbox (26.62413pt too wide) in paragraph at lines 299--321
 [][] 
  []
 
@@ -990,28 +990,28 @@ Overfull \hbox (26.62413pt too wide) in paragraph at lines 298--320
 File: ./figure/n_50_D+E_2.png Graphic file (type png)
 
 <use ./figure/n_50_D+E_2.png>
-Package pdftex.def Info: ./figure/n_50_D+E_2.png used on input line 331.
+Package pdftex.def Info: ./figure/n_50_D+E_2.png used on input line 332.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
 <./figure/n_100_D+E_2.png, id=529, 537.00626pt x 510.90875pt>
 File: ./figure/n_100_D+E_2.png Graphic file (type png)
 
 <use ./figure/n_100_D+E_2.png>
-Package pdftex.def Info: ./figure/n_100_D+E_2.png used on input line 333.
+Package pdftex.def Info: ./figure/n_100_D+E_2.png used on input line 334.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
 <./figure/n_500_D+E_2.png, id=530, 537.00626pt x 510.90875pt>
 File: ./figure/n_500_D+E_2.png Graphic file (type png)
 
 <use ./figure/n_500_D+E_2.png>
-Package pdftex.def Info: ./figure/n_500_D+E_2.png used on input line 335.
+Package pdftex.def Info: ./figure/n_500_D+E_2.png used on input line 336.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
 
 <./figure/n_1000_D+E_2.png, id=531, 537.00626pt x 510.90875pt>
 File: ./figure/n_1000_D+E_2.png Graphic file (type png)
 
 <use ./figure/n_1000_D+E_2.png>
-Package pdftex.def Info: ./figure/n_1000_D+E_2.png used on input line 337.
+Package pdftex.def Info: ./figure/n_1000_D+E_2.png used on input line 338.
 (pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
  [17] [18 <./figure/n_50_D+E_2.png> <./figure/n_100_D+E_2.png> <./figure/n_500_
 D+E_2.png> <./figure/n_1000_D+E_2.png>]
@@ -1019,40 +1019,40 @@ D+E_2.png> <./figure/n_1000_D+E_2.png>]
 File: ./figure/bottle_0.png Graphic file (type png)
 
 <use ./figure/bottle_0.png>
-Package pdftex.def Info: ./figure/bottle_0.png used on input line 347.
+Package pdftex.def Info: ./figure/bottle_0.png used on input line 348.
 (pdftex.def)             Requested size: 108.405pt x 107.21486pt.
 
 <./figure/bone_0.png, id=559, 210.7875pt x 189.70876pt>
 File: ./figure/bone_0.png Graphic file (type png)
 
 <use ./figure/bone_0.png>
-Package pdftex.def Info: ./figure/bone_0.png used on input line 349.
+Package pdftex.def Info: ./figure/bone_0.png used on input line 350.
 (pdftex.def)             Requested size: 108.405pt x 97.56648pt.
 
 <./figure/wrench_0.png, id=560, 232.87pt x 204.765pt>
 File: ./figure/wrench_0.png Graphic file (type png)
 
 <use ./figure/wrench_0.png>
-Package pdftex.def Info: ./figure/wrench_0.png used on input line 351.
+Package pdftex.def Info: ./figure/wrench_0.png used on input line 352.
 (pdftex.def)             Requested size: 108.405pt x 95.32095pt.
 
 <./figure/bottle.png, id=561, 503.8825pt x 386.44376pt>
 File: ./figure/bottle.png Graphic file (type png)
 
 <use ./figure/bottle.png>
-Package pdftex.def Info: ./figure/bottle.png used on input line 358.
+Package pdftex.def Info: ./figure/bottle.png used on input line 359.
 (pdftex.def)             Requested size: 108.405pt x 83.13686pt.
  <./figure/bone.png, id=562, 510.90875pt x 393.47pt>
 File: ./figure/bone.png Graphic file (type png)
 
 <use ./figure/bone.png>
-Package pdftex.def Info: ./figure/bone.png used on input line 360.
+Package pdftex.def Info: ./figure/bone.png used on input line 361.
 (pdftex.def)             Requested size: 108.405pt x 83.48367pt.
  <./figure/wrench.png, id=563, 489.83pt x 394.47375pt>
 File: ./figure/wrench.png Graphic file (type png)
 
 <use ./figure/wrench.png>
-Package pdftex.def Info: ./figure/wrench.png used on input line 362.
+Package pdftex.def Info: ./figure/wrench.png used on input line 363.
 (pdftex.def)             Requested size: 108.405pt x 87.29611pt.
  [19 <./figure/bottle_0.png> <./figure/bone_0.png> <./figure/wrench_0.png>] [20
  <./figure/bottle.png> <./figure/bone.png> <./figure/wrench.png>]
@@ -1061,94 +1061,30 @@ Package pdftex.def Info: ./figure/wrench.png used on input line 362.
 File: ./figure/Pairs_plot_noisy_total_linear_909.png Graphic file (type png)
  <use ./figure/Pairs_plot_noisy_total_linear_909.png>
 Package pdftex.def Info: ./figure/Pairs_plot_noisy_total_linear_909.png used on
- input line 378.
+ input line 379.
 (pdftex.def)             Requested size: 483.30116pt x 329.72882pt.
 
-Overfull \hbox (49.68117pt too wide) in paragraph at lines 378--379
+Overfull \hbox (49.68117pt too wide) in paragraph at lines 379--380
  [][] 
  []
 
-[21 <./figure/Pairs_plot_noisy_total_linear_909.png>]
-<./figure/Uncommon_var_E_n_50.png, id=619, 537.00626pt x 510.90875pt>
-File: ./figure/Uncommon_var_E_n_50.png Graphic file (type png)
-
-<use ./figure/Uncommon_var_E_n_50.png>
-Package pdftex.def Info: ./figure/Uncommon_var_E_n_50.png used on input line 39
-3.
-(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
-
-<./figure/Uncommon_var_E_n_100.png, id=620, 537.00626pt x 510.90875pt>
-File: ./figure/Uncommon_var_E_n_100.png Graphic file (type png)
-
-<use ./figure/Uncommon_var_E_n_100.png>
-Package pdftex.def Info: ./figure/Uncommon_var_E_n_100.png used on input line 3
-95.
-(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
-
-<./figure/Uncommon_var_E_n_500.png, id=621, 537.00626pt x 510.90875pt>
-File: ./figure/Uncommon_var_E_n_500.png Graphic file (type png)
-
-<use ./figure/Uncommon_var_E_n_500.png>
-Package pdftex.def Info: ./figure/Uncommon_var_E_n_500.png used on input line 3
-97.
-(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
-
-<./figure/Uncommon_var_E_n_1000.png, id=622, 537.00626pt x 510.90875pt>
-File: ./figure/Uncommon_var_E_n_1000.png Graphic file (type png)
-
-<use ./figure/Uncommon_var_E_n_1000.png>
-Package pdftex.def Info: ./figure/Uncommon_var_E_n_1000.png used on input line 
-399.
-(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
-
-<./figure/raw_stress_n_50.png, id=629, 537.00626pt x 510.90875pt>
-File: ./figure/raw_stress_n_50.png Graphic file (type png)
-
-<use ./figure/raw_stress_n_50.png>
-Package pdftex.def Info: ./figure/raw_stress_n_50.png used on input line 407.
-(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
-
-<./figure/raw_stress_n_100.png, id=630, 537.00626pt x 510.90875pt>
-File: ./figure/raw_stress_n_100.png Graphic file (type png)
-
-<use ./figure/raw_stress_n_100.png>
-Package pdftex.def Info: ./figure/raw_stress_n_100.png used on input line 409.
-(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
-
-<./figure/raw_stress_n_500.png, id=631, 537.00626pt x 510.90875pt>
-File: ./figure/raw_stress_n_500.png Graphic file (type png)
-
-<use ./figure/raw_stress_n_500.png>
-Package pdftex.def Info: ./figure/raw_stress_n_500.png used on input line 411.
-(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
-
-<./figure/raw_stress_n_1000.png, id=632, 537.00626pt x 510.90875pt>
-File: ./figure/raw_stress_n_1000.png Graphic file (type png)
-
-<use ./figure/raw_stress_n_1000.png>
-Package pdftex.def Info: ./figure/raw_stress_n_1000.png used on input line 413.
-
-(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
- [22] [23 <./figure/Uncommon_var_E_n_50.png> <./figure/Uncommon_var_E_n_100.png
-> <./figure/Uncommon_var_E_n_500.png> <./figure/Uncommon_var_E_n_1000.png>] [24
-] [25 <./figure/raw_stress_n_50.png> <./figure/raw_stress_n_100.png> <./figure/
-raw_stress_n_500.png> <./figure/raw_stress_n_1000.png>] [26] [27] [28] [29]
-Overfull \hbox (27.02167pt too wide) in paragraph at lines 505--505
+[21 <./figure/Pairs_plot_noisy_total_linear_909.png>] [22] [23]
+Overfull \hbox (27.02167pt too wide) in paragraph at lines 440--440
 [] 
  []
 
-[30] [31] [32]
-Overfull \hbox (24.50427pt too wide) in paragraph at lines 554--554
-[] 
- []
-
-[33]
-Overfull \hbox (3.68088pt too wide) in paragraph at lines 559--559
+[24] [25] [26]
+Overfull \hbox (24.50427pt too wide) in paragraph at lines 489--489
 [] 
  []
 
 
-Overfull \hbox (5.34047pt too wide) detected at line 563
+Overfull \hbox (3.68088pt too wide) in paragraph at lines 494--494
+[] 
+ []
+
+
+Overfull \hbox (5.34047pt too wide) detected at line 498
 [][]\OML/cmm/m/it/12 E[]\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 z[] \OMS/cmsy/m/n/12
  ^^@ \OML/cmm/m/it/12 Z[]\OMS/cmsy/m/n/12 k \OT1/cmr/m/n/12 + (\OML/cmm/m/it/12
  E[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 ^^[[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/
@@ -1161,12 +1097,12 @@ z[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 Z[]\OMS/cmsy/m/n/12 k\OT1/cmr/m/n/12
  []
 
 
-Overfull \hbox (10.41795pt too wide) in paragraph at lines 570--570
+Overfull \hbox (10.41795pt too wide) in paragraph at lines 505--505
 [] 
  []
 
-[34] [35] [36] [37] [38]
-Overfull \hbox (14.15137pt too wide) detected at line 675
+[27] [28] [29] [30] [31] [32]
+Overfull \hbox (14.15137pt too wide) detected at line 610
 \OML/cmm/m/it/12 W[]S[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 S[]W[] \OT1/cmr/m
 /n/12 = (\OML/cmm/m/it/12 W[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 U[]U[]\OT1/
 cmr/m/n/12 )\OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 U[]\OT1/cmr
@@ -1177,8 +1113,8 @@ m/n/12 + \OML/cmm/m/it/12 S[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 U[]U[] \OMS/cmsy
 /m/n/12 ^^@ \OML/cmm/m/it/12 W[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
  []
 
-[39] [40]
-Overfull \hbox (3.02353pt too wide) detected at line 700
+[33]
+Overfull \hbox (3.02353pt too wide) detected at line 635
 \U/msb/m/n/12 P\OT1/cmr/m/n/12 [\OMS/cmsy/m/n/12 j []\OT1/cmr/m/n/12 ([][] \OMS
 /cmsy/m/n/12 ^^@ [][]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 V[]V[]\OMS/cmsy/m/n/12 j
  \OML/cmm/m/it/12 > t\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 2 [
@@ -1186,26 +1122,46 @@ Overfull \hbox (3.02353pt too wide) detected at line 700
  ; []\OT1/cmr/m/n/12 )[]
  []
 
-[41]
-Overfull \hbox (25.24838pt too wide) in paragraph at lines 728--728
+[34]
+Overfull \hbox (25.24838pt too wide) in paragraph at lines 663--663
 [] 
  []
 
-[42] [43] [44]
-Overfull \hbox (4.74162pt too wide) in paragraph at lines 811--811
+[35] [36] [37] [38]
+Overfull \hbox (11.74678pt too wide) in paragraph at lines 746--746
 [] 
  []
 
-[45] [46]) [47]
+[39] [40] [41]
+Overfull \hbox (10.93283pt too wide) in paragraph at lines 796--796
+[] 
+ []
+
+[42]
+Overfull \hbox (25.21165pt too wide) in paragraph at lines 804--804
+[] 
+ []
+
+[43]
+Overfull \hbox (9.16905pt too wide) detected at line 814
+\OML/cmm/m/it/12 Y \OT1/cmr/m/n/12 = []
+ []
+
+) [44]
 \openout2 = `chapter3.aux'.
 
  (./chapter3.tex
 Chapter 3.
-[48
+[45
 
 
 
-] [49] [50] [51] [52] [53] [54] [55] [56]
+] [46] [47] [48] [49] [50]
+
+LaTeX Warning: Reference `sec:algorithms' on page 51 undefined on input line 15
+8.
+
+[51] [52] [53]
 Overfull \hbox (16.06828pt too wide) in paragraph at lines 192--210
 \OT1/cmr/m/n/12 splits are $\OMS/cmsy/m/n/12 ff\OT1/cmr/m/n/12 1\OMS/cmsy/m/n/1
 2 g\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 ; \OT
@@ -1221,48 +1177,124 @@ n/12 3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 ;
 m/m/it/12 ; \OT1/cmr/m/n/12 6\OMS/cmsy/m/n/12 gg$\OT1/cmr/m/n/12 ,
  []
 
-[57]
+[54]
 Overfull \hbox (4.1021pt too wide) in paragraph at lines 226--227
 []\OT1/cmr/m/n/12 Equation ([]3.3[]) can be sim-pli-fied by not-ing that $\OML/
 cmm/m/it/12 z[] \OT1/cmr/m/n/12 = 1$ and $\OML/cmm/m/it/12 z[] \OT1/cmr/m/n/12 
 =
  []
 
-[58] [59]
+[55] [56]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 267.
-) [60] [61] [62] [63] (./root.bbl [64
+put line 266.
+) [57] [58] [59] [60]
+\openout2 = `chapter4.aux'.
+
+ (./chapter4.tex
+Chapter 4.
+[61
 
 
-] [65] [66] [67] [68] [69]
-[70]) [71]
+
+] <./figure/Uncommon_var_E_n_50.png, id=936, 537.00626pt x 510.90875pt>
+File: ./figure/Uncommon_var_E_n_50.png Graphic file (type png)
+
+<use ./figure/Uncommon_var_E_n_50.png>
+Package pdftex.def Info: ./figure/Uncommon_var_E_n_50.png used on input line 13
+.
+(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
+
+<./figure/Uncommon_var_E_n_100.png, id=937, 537.00626pt x 510.90875pt>
+File: ./figure/Uncommon_var_E_n_100.png Graphic file (type png)
+
+<use ./figure/Uncommon_var_E_n_100.png>
+Package pdftex.def Info: ./figure/Uncommon_var_E_n_100.png used on input line 1
+5.
+(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
+
+<./figure/Uncommon_var_E_n_500.png, id=938, 537.00626pt x 510.90875pt>
+File: ./figure/Uncommon_var_E_n_500.png Graphic file (type png)
+
+<use ./figure/Uncommon_var_E_n_500.png>
+Package pdftex.def Info: ./figure/Uncommon_var_E_n_500.png used on input line 1
+7.
+(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
+
+<./figure/Uncommon_var_E_n_1000.png, id=939, 537.00626pt x 510.90875pt>
+File: ./figure/Uncommon_var_E_n_1000.png Graphic file (type png)
+
+<use ./figure/Uncommon_var_E_n_1000.png>
+Package pdftex.def Info: ./figure/Uncommon_var_E_n_1000.png used on input line 
+19.
+(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
+
+<./figure/raw_stress_n_50.png, id=946, 537.00626pt x 510.90875pt>
+File: ./figure/raw_stress_n_50.png Graphic file (type png)
+
+<use ./figure/raw_stress_n_50.png>
+Package pdftex.def Info: ./figure/raw_stress_n_50.png used on input line 27.
+(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
+
+<./figure/raw_stress_n_100.png, id=947, 537.00626pt x 510.90875pt>
+File: ./figure/raw_stress_n_100.png Graphic file (type png)
+
+<use ./figure/raw_stress_n_100.png>
+Package pdftex.def Info: ./figure/raw_stress_n_100.png used on input line 29.
+(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
+
+<./figure/raw_stress_n_500.png, id=948, 537.00626pt x 510.90875pt>
+File: ./figure/raw_stress_n_500.png Graphic file (type png)
+
+<use ./figure/raw_stress_n_500.png>
+Package pdftex.def Info: ./figure/raw_stress_n_500.png used on input line 31.
+(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
+
+<./figure/raw_stress_n_1000.png, id=949, 537.00626pt x 510.90875pt>
+File: ./figure/raw_stress_n_1000.png Graphic file (type png)
+
+<use ./figure/raw_stress_n_1000.png>
+Package pdftex.def Info: ./figure/raw_stress_n_1000.png used on input line 33.
+(pdftex.def)             Requested size: 173.44534pt x 165.01433pt.
+ [62] [63 <./figure/Uncommon_var_E_n_50.png> <./figure/Uncommon_var_E_n_100.png
+> <./figure/Uncommon_var_E_n_500.png> <./figure/Uncommon_var_E_n_1000.png>] [64
+ <./figure/raw_stress_n_50.png> <./figure/raw_stress_n_100.png> <./figure/raw_s
+tress_n_500.png> <./figure/raw_stress_n_1000.png>] [65] [66]) [67] (./root.bbl 
+[68
+
+
+] [69] [70] [71] [72] [73] [74])
+[75]
 \openout2 = `CV.aux'.
 
- (./CV.tex <Percy.jpg, id=1044, 3517.14pt x 2344.76pt>
+ (./CV.tex <Percy.jpg, id=1062, 3517.14pt x 2344.76pt>
 File: Percy.jpg Graphic file (type jpg)
-
-<use Percy.jpg>
+ <use Percy.jpg>
 Package pdftex.def Info: Percy.jpg used on input line 6.
 (pdftex.def)             Requested size: 144.52568pt x 96.35045pt.
-) [72
+)
+[76
 
 
  <./Percy.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
- (./root.aux (./chapter0.aux)
-(./chapter1.aux) (./chapter2.aux) (./chapter3.aux) (./CV.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+ (./root.aux (./chapter0.aux) (./chapter1.aux)
+(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./CV.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
 Package rerunfilecheck Info: File `root.out' has not changed.
-(rerunfilecheck)             Checksum: 21487E9278C7D85B3B8227B553C03C26;2540.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
+(rerunfilecheck)             Checksum: 4A957772CBB39D663ED6DEFBCBCB1801;2571.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
  ) 
 Here is how much of TeX's memory you used:
- 20394 strings out of 493014
- 374414 string characters out of 6133351
- 468767 words of memory out of 5000000
- 23232 multiletter control sequences out of 15000+600000
+ 20410 strings out of 493014
+ 374571 string characters out of 6133351
+ 469643 words of memory out of 5000000
+ 23237 multiletter control sequences out of 15000+600000
  25238 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,19n,54p,1387b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1287,10 +1319,10 @@ ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 16/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2016/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on root.pdf (83 pages, 1267644 bytes).
+Output written on root.pdf (87 pages, 1276194 bytes).
 PDF statistics:
- 1176 PDF objects out of 1200 (max. 8388607)
- 1016 compressed objects within 11 object streams
- 244 named destinations out of 1000 (max. 500000)
+ 1195 PDF objects out of 1200 (max. 8388607)
+ 1031 compressed objects within 11 object streams
+ 248 named destinations out of 1000 (max. 500000)
  407 words of extra memory for PDF output out of 10000 (max. 10000000)
 

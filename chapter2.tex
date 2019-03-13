@@ -251,7 +251,8 @@ of $d \times d$ orthogonal matrices $\{W_n\}_{n=1}^{\infty}$ such that
 if $n q_n = \omega(\log^{4}{n})$, then for any $\alpha \in
 \mathbb{R}^{d}$ and any fixed row index $i$,
   $$ \lim_{n {\to} \infty} \mathbb{P} \{n^{1/2} [(\hat{X_n}W_n)_{i} - q_n^{1/2} (Z_i - \bar{Z})] \leq \alpha\} = \int \Phi(\alpha, \Sigma(z)) dF(\emph{z})$$
-  where $\bar{Z}$ is the mean of $Z_i$'s and $\Phi(\alpha, \Sigma)$ denotes the CDF of a multivariate Gaussian with mean $0$ and covariance matrix $\Sigma$, evaluated at $\alpha$. Here $\Sigma (z)= {\Xi}^{-1} \widetilde{\Sigma}(z) {\Xi}^{-1}$, $\Xi = \mathrm{cov}(Z_i) \in \R^{d \times d}$ and with $\mu = \mathbb{E}[Z_i] \in \mathbb{R}^{d}$,
+  where $\bar{Z}$ is the mean of $Z_i$'s and $\Phi(\alpha, \Sigma)$ denotes the CDF of a multivariate Gaussian with mean $0$ and covariance matrix $\Sigma$, evaluated at $\alpha$. 
+  Here $\Sigma (z)= {\Xi}^{-1} \widetilde{\Sigma}(z) {\Xi}^{-1}$, $\Xi = \mathrm{cov}(Z_i) \in \R^{d \times d}$ and with $\mu = \mathbb{E}[Z_i] \in \mathbb{R}^{d}$,
   $$\widetilde{\Sigma} (z) = \frac{1-q_n}{4} \times \mathbb{E}_{Z_k} \Bigl[ \|z - Z_k\|^4 (Z_k- {\mu}) (Z_k - {\mu})^\top\Bigr]$$ 
   is a covariance matrix depending on $z$. 
 \end{theorem}
@@ -383,73 +384,7 @@ This configuration exhibits nine fairly well-separated clusters roughly centered
 While these preliminary shape clustering results are obtained with a specific and simple distance on the space of curves, future work will investigate whether similar properties hold with different, more elaborate metrics and/or geometric noise models. The central limit theorem derived here could then constitute a useful theoretical tool to evaluate the discriminating power of shape clustering methods based on CMDS.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Discussion}
-\label{D}
 
-In \citet{Athreya2016} and \citet{OMNI}, the authors prove that adjacency spectral embedding of the random dot product graph gives rise to a central limit theorem for the estimated latent positions. In this work we extend these results to the previously unexplored area of perturbation analysis for CMDS, addressing a gap in the literature as acknowledged in \citet{Fan} and \citet{Peterfreund&Gavish}. Notably, the three noise models we proposed in Section \ref{sec:M&E} each give rise to a central limit theorem; that is, for Euclidean distance matrix, the rows of the configuration matrix given by CMDS under noise will center around the corresponding rows of the true configuration matrix. Furthermore, our simulations on the synthetic data together with the shape clustering data all demonstrated the validity of our results. We have avoided any discussion of the model selection problem of choosing a suitable embedding dimension $\hat{d}$. Instead, we assume $d$ is known -- except in Section 4.2. There are many methods for choosing (spectral) embedding dimensions, see \cite{Zhu&Ghodsi, Jackson, Chatterjee}. 
-
-\begin{figure}[tp]
-    \centering
-    \subfloat[$n$=50]{{\includegraphics[width=.4\textwidth]{./figure/Uncommon_var_E_n_50.png} }}
-    \quad
-    \subfloat[$n$=100]{{\includegraphics[width=.4\textwidth]{./figure/Uncommon_var_E_n_100.png} }}
-    \quad
-    \subfloat[$n$=500]{{\includegraphics[width=.4\textwidth]{./figure/Uncommon_var_E_n_500.png} }}
-    \quad
-    \subfloat[$n$=1000]{{\includegraphics[width=.4\textwidth]{./figure/Uncommon_var_E_n_1000.png} }}
-    \caption{Simulation of CMDS with heteroscedastic noise $\widetilde{E}$. The black dots are the true positions for the three points. The blue dots are the empirical means and the blue ellipses are the 95\% level curve of the empirical covariance matrix. Note that $\widetilde{E}$ used in this simulation is of the same order for the off-diagonal blocks as that used in Figure \ref{fig:Simulation result}. NB: there is asymptotic bias.}
-    \label{fig:Uncommon_var_E}
-\end{figure}
-
-A practically relevant and conceptually illustrative example comes from relaxing the assumption of common variance for the entries of the noise matrix $E$ in Section \ref{D+E}: the consistency result from Theorem \ref{main_theorem_D+E} no longer holds. To illustrate this point, we return to our three-point-mass simulation presented in Section \ref{SD} and modify our noise model as follows: Let $\widetilde{E}_{ij} \iid \textrm{Uniform}(-D_{ij}, +D_{ij})$ for $i < j$ and $\widetilde{E}_{ij}= \widetilde{E}_{ji}$. (The noise now depends on the entries of $D$, and $\Delta = D + \widetilde{E}$ no longer has negative entries.) The embedding of $\Delta$ into two dimensions gives class-conditional Gaussians; however, we have introduced bias into the embedding configuration. Figure \ref{fig:Uncommon_var_E} shows, for one realization, the embedding result. Note that the empirical mean and the theoretical positions do not coincide in simulation with large $n$, and theoretically even in the limit.
-\begin{figure}[tp]
-    \centering
-    \subfloat[$n$=50]{{\includegraphics[width=.4\textwidth]{./figure/raw_stress_n_50.png} }}
-    \quad
-    \subfloat[$n$=100]{{\includegraphics[width=.4\textwidth]{./figure/raw_stress_n_100.png} }}
-    \quad
-    \subfloat[$n$=500]{{\includegraphics[width=.4\textwidth]{./figure/raw_stress_n_500.png} }}
-    \quad
-    \subfloat[$n$=1000]{{\includegraphics[width=.4\textwidth]{./figure/raw_stress_n_1000.png} }}
-    \caption{Simulation of MDS using raw stress criterion for $n$=50, 100, 500 and 1000 points.
-                  The black dots are the true positions of $x_1$, $x_2$ and $x_3$, the blue dots are the empirical mean of the simulation and the blue ellipses are the 95\% level curve of the empirical covariance matrix.}
-    \label{fig:RawStress}
-\end{figure}
-
-CMDS is just one of a wide variety of multidimensional scaling techniques. Minimizing the raw stress criterion is another commonly used MDS technique \citep{Leeuw-Heiser}, i.e., given a $n \times n$ observed dissimilarity matrix $\Delta$ and an embedding dimension $d$, one seeks to minimize the objective function $$\sigma_r = \sigma_r(X) = \sum\limits_{(i,j)} (\delta_{ij} - \|X_i - X_j\|)^2.$$ The minimization of $\sigma_r(X)$ is with respect to all configurations $X \in \mathbb{R}^{n \times d}$ and usually proceeds via an iterative algorithm which updates the configuration matrix $X$ until a stopping criterion is met. Keeping the simulation settings as in Section \ref{SD},  the resulting configuration is shown in Figure \ref{fig:RawStress}. This suggests that the CLT may hold for raw stress just as well as for CMDS. However, this claim is at best a conjecture at present as perturbation analysis of stress minimization algorithms is significantly more involved.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conjecture: CMDS on Omni Embedding of graphs and Hypothesis Testing}
-Given a collection of Random Dot Product Graphs: $A^{(1)}, A^{(2)}, \ldots, A^{(m)}$, each with $n$ vertices, \cite{OMNI} seeks to jointly embed all $m$ graphs into a common (prespecified) $d$-dimensional Euclidean space by embedding the $nm \times nm$ OMNI Matrix $\mathcal{M}$ given by
-$$
-\mathcal{M} :=
-\begin{bmatrix}
-     A^{(1)}       & \frac{A^{(1)} + A^{(2)}}{2} & \frac{A^{(1)} + A^{(3)}}{2} & \dots & \frac{A^{(1)} + A^{(m)}}{2} \\
-    \frac{A^{(2)} + A^{(2)}}{2}     & A^{(2)} & \frac{A^{(2)} + A^{(3)}}{2} & \dots & \frac{A^{(2)} + A^{(m)}}{2} \\
-    \vdots & \vdots & \vdots & \ldots & \vdots \\
-    \frac{A^{(m)} + A^{(1)}}{2} & \frac{A^{(m)} + A^{(2)}}{2} & \frac{A^{(m)} + A^{(3)}}{2} & \dots & A^{(m)}
-\end{bmatrix}.
-$$
-Using the notation in \cite{OMNI}, let $S_\M$ represent the $d \times d$ matrix of top $d$ eigenvalues of $\M$, ordered by magnitude, and let $U_\M$ be the $mn \times d$-dimensional matrix of associated eigenvectors. Define the omnibus embedding, denoted OMNI($\mathcal{M}$), by $U_\M S^{1/2}_\M$, note that OMNI($\mathcal{M}$) produces $m$ separate points in Euclidean for each graph vertex, effectively one such point for each copy of the multiple graphs in our sample. Furthermore, denote 
-\begin{equation}
-    U_\M S^{1/2}_\M =
-\begin{bmatrix}
-     \hat{X}^{(1)}\\
-     \hat{X}^{(2)}\\
-     \vdots \\
-     \hat{X}^{(m)}
-\end{bmatrix}
-\end{equation}
-where each $\hat{X}^{(i)}$ is an $n \times d$ matrix representing the embedding of the $i$th random graph in $d$ dimension. 
-
-As pointed out in \cite{OMNI}, the omnibus embedding introduces alignment between graphs by placing an average on the off-diagonal blocks of $\M$, merely considering a Frobenius norm difference between blocks of the omnibus embedding 
-$\| \hat{X}^{(i)} - \hat{X}^{(j)} \|_{F}$
-without any Procrustes alignments provides meaningful discrimination between graphs with different latent positions. Specifically, we can construct an $m \times m$ distance matrix $\Delta$ given by $\Delta_{ij} := \| \hat{X}^{(i)} - \hat{X}^{(j)} \|_{F}$ as an estimation for the Frobenius distance matrix $D$ between true latent positions $ D_{ij} := \| X^{(i)} - X^{(j)} \|_{F}$, where $X^{(i)}$ is the true latent position for the $i$th graph. That is, $\Delta = D + E $ for some $m \times m$ noise matrix $E$. \textcolor{red}{(Note that the entries of $E$ are correlated. Furthermore, $\mathbb{E}[E] = 0$ only when all the $m$ graphs shares the same underlying true latent position. Those two observations make the proof of the following conjectures quite a bit more challenging).}
-
-A natural thing to do now is to perform classical multidimensional scaling (CMDS) on $\Delta$ and $D$ and compare the resulting configuration matrix $\hat{\G}$ = CMDS($\Delta$) and $\G$ = CMDS($D$), and we propose the following conjecture:
-\begin{Conjecture}
-Using the above notations, we propose:
-$$ \lim_{m {\to} \infty} \mathbb{P} \{\sqrt{m} [(\hat{\G}W_m)_i - (\G)_i ]\leq \alpha\} = \int_{supp \textrm{F}} \Phi(\alpha, \Sigma(\emph{z})) dF(\emph{z}) $$ where $z$'s depends on the true underlying distribution of the latent positions $X$ of the graphs.
-\end{Conjecture}
 
 
 
@@ -760,7 +695,25 @@ We now consider the rows of $G_1$. Note that $U_{\hat{B}}^{\top} U_{\hat{B}} = I
     & = \| U_{\hat{B}} S_{\hat{B}}^{-1/2} \| \times \| [ (I -U_B U_B^{\top}) (\hat{B} - B) (I -U_B U_B^{\top}) U_{\hat{B}} U_{\hat{B}}^{\top} ]_h\| \\
     & \leq \frac{C}{\sqrt{n}} \| [ (I -U_B U_B^{\top}) (\hat{B} - B) (I -U_B U_B^{\top}) U_{\hat{B}} U_{\hat{B}}^{\top} ]_h\|
 \end{align*}
-Define $$ H_1 = (I -U_B U_B^{\top}) (\hat{B} - B) (I -U_B U_B^{\top}) U_{\hat{B}} U_{\hat{B}}^{\top}.$$ Since the $Z_i$ are i.i.d., the rows of $H_1$ are exchangeable and hence, for any fixed index $h$, $n \mathbb{E} \|(H_1)_h \|^2 = \mathbb{E}[\|H_1\|_F^2]$. Markov's inequality then implies
+
+
+
+
+
+
+
+
+Define $$ H_1 = (I -U_B U_B^{\top}) (\hat{B} - B) (I -U_B U_B^{\top}) U_{\hat{B}} U_{\hat{B}}^{\top}.$$ 
+
+We will show that 
+$$ $$
+
+
+
+
+
+
+Since the $Z_i$ are i.i.d., the rows of $H_1$ are exchangeable and hence, for any fixed index $h$, $n \mathbb{E} \|(H_1)_h \|^2 = \mathbb{E}[\|H_1\|_F^2]$. Markov's inequality then implies
   \begin{align*}
     \mathbb{P} [ \|\sqrt{n} (H_1)_h \| > t] & \leq \frac{n \mathbb{E} {\| [(I -U_B U_B^{\top}) (\hat{B} - B) (I -U_B U_B^{\top}) U_{\hat{B}} U_{\hat{B}}^\top)_h]\|}^2 }{t^2} \\
     & = \frac{\mathbb{E}\bigl(\| (I -U_B U_B^{\top}) (\hat{B} - B) (I -U_B U_B^{\top}) U_{\hat{B}} U_{\hat{B}}^{\top} \|_F^2\bigr)}{t^2}
@@ -798,16 +751,16 @@ The major difference between our main theorems is the calculation of the covaria
  Recall that $PZ = U_B S_B^{1/2} \tilde{W}_n $. We therefore have
     \begin{align*}
         n^{1/2} \tilde{W}_n^\top [(\hat{B} - B) U_B S_B^{-1/2}]_{i}
-        & = n^{1/2} \tilde{W}_n^\top [(\hat{B} - B) PZ \tilde{W}_n^\top {S_B}^{-1}]_{i} \\
-        & = n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n [(\hat{B} - B)PZ]_{i}\\
-        & =  \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n [P (D^{(2)}  - \Delta^{(2)}) PZ]_{i}\\
-        & = \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[ P (D^{(2)}  - \Delta^{(2)}) (I - 1_n 1_n^\top/n)Z\Bigr]_{i} \\
-        & = \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[ P (D^{(2)}  - \Delta^{(2)}) (Z - 1_n \mu^\top) \Bigr]_{i} \\
+         = & n^{1/2} \tilde{W}_n^\top [(\hat{B} - B) PZ \tilde{W}_n^\top {S_B}^{-1}]_{i} \\
+         = & n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n [(\hat{B} - B)PZ]_{i}\\
+         = & \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n [P (D^{(2)}  - \Delta^{(2)}) PZ]_{i}\\
+         = & \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[ P (D^{(2)}  - \Delta^{(2)}) (I - 1_n 1_n^\top/n)Z\Bigr]_{i} \\
+         = & \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[ P (D^{(2)}  - \Delta^{(2)}) (Z - 1_n \mu^\top) \Bigr]_{i} \\
         & \textrm{( since } PZ = Z - 1_n \bar{Z} = Z - 1_n \mu^{\top} )\\
-        & =  \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[  (D^{(2)} - \Delta^{(2)})(Z - 1_n \mu^\top ) \\
+         = &  \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[  (D^{(2)} - \Delta^{(2)})(Z - 1_n \mu^\top ) \\
         & -  1_n 1_n^\top/n (D^{(2)} - \Delta^{(2)}) (Z - 1_n \mu^\top)    \Bigl]_{i}    \\
         & \textrm{ (note that } \frac{1_n 1_n^\top}{n} (D^{(2)} - \Delta^{(2)}) (Z - 1_n \mu^\top) \rightarrow 0 \textrm{ as } n \rightarrow \infty) \\
-        & =  \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[ (D^{(2)} - \Delta^{(2)})(Z - 1_n \mu^\top ) \Bigl]_{i}  \textrm{ as } n \rightarrow \infty
+        = &  \frac{1}{2} n^{1/2} \tilde{W}_n^\top {S_B}^{-1} \tilde{W}_n \Bigl[ (D^{(2)} - \Delta^{(2)})(Z - 1_n \mu^\top ) \Bigl]_{i}  \textrm{ as } n \rightarrow \infty
     \end{align*} 
 Therefore,
     \begin{equation*}
@@ -829,7 +782,64 @@ By the strong law of large numbers, we have
   as desired.  
 \end{proof} 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lemma}
-
+\label{cov_missing_entries}
+ Let $Z_1, \dots, Z_n$ be independent and identically distributed according to some multivariate sub-Gaussian distribution F and let our model be as in Theorem \ref{main_theorem_matrix_completion}. Then there exists a sequence of $d \times d$ orthogonal matrices $\tilde{W}_n$, such that for any fixed index $i$, we have
+  $$ n^{1/2} \tilde{W}_n^{\top} [(\hat{B} - q_n B)  \frac{1}{\sqrt{q_n}} U_B S_B^{-1/2}]_{i} \longrightarrow \mathcal{N}(0, \Sigma)$$
+  Here $\Sigma (z)= {\Xi}^{-1} \widetilde{\Sigma}(z) {\Xi}^{-1}$, $\Xi = \mathrm{cov}(Z_i) \in \R^{d \times d}$ and with $\mu = \mathbb{E}[Z_i] \in \mathbb{R}^{d}$,
+  $$\widetilde{\Sigma} (z) = \frac{1-q_n}{4} \times \mathbb{E}_{Z_k} \Bigl[ \|z - Z_k\|^4 (Z_k- {\mu}) (Z_k - {\mu})^\top\Bigr]$$ 
+  is a covariance matrix depending on $z$, and $(A)_i$ or $[A]_i$ denote the $i$th row of a matrix $A$. 
 \end{lemma}
+\begin{proof}
+First recall that as our mode we have
+\[
+    E_{ij} =
+    \begin{cases}
+        -D_{ij}, & \text{with probability } 1-q_n\\
+        0, & \text{with probability } q_n
+       \end{cases} 
+\]
+hence it is easy to see that $\mathbb{E}[E] = D (q_n -1 )$, $\mathbb{E}[E^2] = D^2(1-q_n)$ and furthermore, $\mathbb{E}[\hat{B}] = q_n B.$
+ 
+As in Lemma \ref{cov_D^2+E}, we will investigate the term
+  \begin{align*}
+   & n^{1/2} \tilde{W}_n^\top \Big[(\hat{B} - q_n B) \frac{1}{\sqrt{q_n}} U_B S_B^{-1/2} \Big]_{i} \\
+  = & {n}^{1/2} \tilde{W}_n^\top \Big[ (\hat{B} - q_n B) \frac{1}{\sqrt{q_n}} (PZ) \tilde{W}_n^\top S_B^{-1/2} \Big]_{i} \\
+  = & {n}^{1/2} \tilde{W}_n^\top S_B^{-1/2} \tilde{W}_n \Big[ (\hat{B} - q_n B) \frac{1}{\sqrt{q_n}} (PZ) \Big]_{i} \\
+  = & -\sqrt{n} \tilde{W}_n^\top S_B^{-1/2} \tilde{W}_n \Big[\frac{1}{\sqrt{q_n}} (D \circ E - D^2(q_n -1)  + \frac{E^2 - D^2(1-q_n)}{2} ) (I - 1_n 1_n^\top/n)Z  \Big]_{i}\\
+  = & -n \tilde{W}_n^\top S_B^{-1/2} \tilde{W}_n \Big[ \frac{1}{\sqrt{q_n}} \frac{1}{\sqrt{n}} \Big( \sum\limits_{i \neq j}^{n} (D \circ E - D^2(q_n -1) + \frac{E^2 - D^2(1-q_n)}{2} )_{ij} (Z_j - \mu) \Big) \\
+  & - \frac{1}{\sqrt{q_n}} \frac{1}{\sqrt{n}} \Big( \sum\limits_{i =1}^{n} D \circ E - D^2(q_n -1) + \frac{E^2 - D^2(1-q_n)}{2} )_{ii} (Z_j - \mu) \Big) \Big] \\
+  = & -n \tilde{W}_n^\top S_B^{-1/2} \tilde{W}_n \Big[ \frac{1}{\sqrt{q_n}} \frac{1}{\sqrt{n}} \Big( \sum\limits_{i \neq j}^{n} (D \circ E - D^2(q_n -1) + \frac{E^2 - D^2(1-q_n)}{2} )_{ij} (Z_j - \mu) \Big) \Big]
+  \end{align*}
+  Note that the second half of the above expression is $0$, hence leave us the above expression. Furthermore, the above term is a sum of $n-1$ independent mean 0 random vectors, which we will now calculate its $\Cov$ matrix.
+  
+ Condition on $Z_i = z_i$, we have:
+ \begin{align*}
+ & \Cov \Big[ \frac{1}{\sqrt{q_n}}   \Big(D_{ij}  E_{ij} - D_{ij}^2(q_n -1) + \frac{E_{ij}^2 - D_{ij}^2(1-q_n)}{2} \Big)_{ij} (Z_j - \mu)  \Big]\\
+ = & \frac{1}{q_n} \Var \Big(  D_{ij}E_{ij} - D_{ij}^2(q_n-1) + \frac{E_{ij} - D_{ij}^2(1-q_n)}{2}  \Big) (z_j-\mu) (Z_j -\mu)^\top \\
+ = & \frac{1}{q_n} \Var \Big(  \|z_i - Z_j \|E_{ij} - \|z_i - Z_j \|^2 (q_n -1) + \frac{E_{ij}^2 - \|z_i - Z_j\|^2 (1-q_n)}{2} \Big) (z_j-\mu) (Z_j -\mu)^\top
+ \end{align*}
+ If we denote $$ Y := \|z_i - Z_j \|E_{ij} - \|z_i - Z_j \|^2 (q_n -1) + \frac{E_{ij}^2 - \|z_i - Z_j\|^2 (1-q_n)}{2},$$ then we have
+ 
+
+  \[
+    Y = 
+    \begin{cases}
+         \|z_i - Z_j \|D_{ij} - \|z_i - Z_j \|^2 (q_n -1) + \frac{D_{ij}^2 - \|z_i - Z_j\|^2 (1-q_n)}{2}, & \text{with probability } 1-q_n\\
+        -\| z_i - Z_j\|^2(q_n-1) - \frac{\|z_i - Z_j\|^2 (1-q_n)   }{2}, & \text{with probability } q_n\\
+     \end{cases} 
+ \]
+ \[
+    = 
+      \begin{cases}   
+           -\frac{q_n}{2} \|z_i - Z_j \|^2, & \text{with probability } 1-q_n\\
+           - \frac{1-q_n}{2} \|z_i-Z_j\|^2, & \text{with probability } q_n.\\
+      \end{cases}
+\]
+
+Hence, $\mathbb{E}[ Y^2] = \frac{q_n(1-q_n)}{4} \|z_i - Z_j\|^4$ and $\mathbb{E}[Y] = 0$.
+
+Overall, we have the desired result.
+\end{proof}
 
